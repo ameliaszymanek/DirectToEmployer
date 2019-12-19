@@ -23,5 +23,7 @@ namespace DirectToEmployer.Models
         [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         public Company Company { get; set; }
+
+        public IEnumerable<Company> Companies { get; set; }
     }
 }

@@ -141,6 +141,7 @@ namespace DirectToEmployer.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = db.Roles.ToList();
             return View();
         }
 
@@ -164,8 +165,16 @@ namespace DirectToEmployer.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    
+                    if (model.UserRoles == "Jobseeker")
+                    {
+                        return RedirectToAction("Create", "Jobseeker");
+                    }
 
-                    return RedirectToAction("Index", "Home");
+                    if (model.UserRoles == "Employer")
+                    {
+                        return RedirectToAction("Create", "Employer");
+                    }
                 }
                 AddErrors(result);
             }
