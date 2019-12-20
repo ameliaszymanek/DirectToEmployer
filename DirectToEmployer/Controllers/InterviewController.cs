@@ -43,10 +43,6 @@ namespace DirectToEmployer.Controllers
             Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(t => t.ApplicationId == userId);
             return View(new Interview { InterviewId = Guid.NewGuid(), JobseekerId = jobseeker.JobseekerId });
 
-            //var userId = User.Identity.GetUserId();
-            //Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId);
-            //return View();
-
         }
 
         // POST: Interview/Create
@@ -64,19 +60,22 @@ namespace DirectToEmployer.Controllers
         }
 
         // GET: Interview/Edit/5
-        public ActionResult Edit(Guid? id)
+        public ActionResult Edit(Guid id)
         {
-            Interview interview = db.Interviews.Find(id);
-            return View(interview);
+            //var EditingInterview = db.Interviews.FirstOrDefault(i => i.InterviewId == id);
+            Interview EditingInt = db.Interviews.Find(id);
+            //interview = db.Interviews.FirstOrDefault(i => i.InterviewId == id);
+            return View("Edit", EditingInt);
         }
 
         // POST: Interview/Edit/5
         [HttpPost]
         public ActionResult Edit(Interview interview)
         {
+            //gets detached from jobseeker when it hits here
             db.Entry(interview).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("ViewInterviews");
+            return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
         // GET: Interview/Delete/5

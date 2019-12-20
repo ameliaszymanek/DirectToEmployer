@@ -30,7 +30,7 @@
         </td>
         <td>
             @*might have to add more overloads*@
-            @Html.ActionLink("Edit", "Edit", "Interview")
+            @Html.ActionLink("Edit", "Edit", "Interview", new { id = item.InterviewId }, null)
             @Html.ActionLink("Delete", "Delete")
         </td>
     </tr>
