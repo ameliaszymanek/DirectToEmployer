@@ -19,6 +19,16 @@ namespace DirectToEmployer.Controllers
             return View(db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId));
         }
 
+        [HttpGet]
+        public ActionResult ViewInterviews()
+        {
+            var userId = User.Identity.GetUserId();
+            //first find jobseeker logged in
+            Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId);
+            //then find all itineraries that jobseeker has (jobseeker id)
+            return View(db.Interviews.Where(i => i.JobseekerId == jobseeker.JobseekerId).ToList());
+        }
+
         // GET: Jobseeker/Details/5
         public ActionResult Details(int id)
         {
