@@ -1,0 +1,93 @@
+﻿@model DirectToEmployer.Models.Checklist
+
+<div>
+    <h4>Checklist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.InterviewId)
+        @Html.HiddenFor(model => model.ChecklistId)
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyResearch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyResearch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionsToPrepare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionsToPrepare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PracticeQuestions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PracticeQuestions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponsesToPrepare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponsesToPrepare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PracticeResponses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PracticeResponses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhatToWear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhatToWear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrepareOutfit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrepareOutfit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhatToBring)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhatToBring)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrepareInterviewEssentials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrepareInterviewEssentials)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterviewFollowUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterviewFollowUp)
+        </dd>
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ChecklistId }) |*@
+    @*@Html.ActionLink("Back to Interview", "Details")*@
+</p>

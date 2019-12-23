@@ -29,11 +29,12 @@ namespace DirectToEmployer.Controllers
         //    //might be able to do this within ViewInterviews View with foreach loop
         //}
 
-        // GET: Interview/Details/5
-        public ActionResult Details(int id)
+        // GET: Checklist/Details/5
+        //have to put a hidden for on ViewInterviews so that the interviewId passes through
+        public ActionResult Details(Guid? id)
         {
-
-            return View();
+            Checklist checklist = db.Checklists.Find(id);
+            return View(checklist);
         }
 
         // GET: Interview/Create
@@ -41,13 +42,14 @@ namespace DirectToEmployer.Controllers
         {
             var userId = User.Identity.GetUserId();
             Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(t => t.ApplicationId == userId);
+            new Checklist { ChecklistId = Guid.NewGuid() };
             return View(new Interview { InterviewId = Guid.NewGuid(), JobseekerId = jobseeker.JobseekerId });
 
         }
 
         // POST: Interview/Create
         [HttpPost]
-        public ActionResult Create(Interview interview)
+        public ActionResult Create(Interview interview, Checklist checklist)
         {
             //logged in user
             var userId = User.Identity.GetUserId();
@@ -55,6 +57,9 @@ namespace DirectToEmployer.Controllers
             interview.JobseekerId = jobseeker.JobseekerId;
             interview.InterviewId = Guid.NewGuid();
             db.Interviews.Add(interview);
+            checklist.ChecklistId = Guid.NewGuid();
+            checklist.InterviewId = interview.InterviewId;
+            db.Checklists.Add(checklist);
             db.SaveChanges();
             return View("Interview");
         }
@@ -77,6 +82,16 @@ namespace DirectToEmployer.Controllers
             db.SaveChanges();
             return RedirectToAction("ViewInterviews", "Jobseeker");
         }
+
+        //GET: Checklist/Edit/5
+
+        // public ActionResult EditChecklist(Guid id)
+        //{
+
+        //}
+
+
+        //POST: Checklist/Edit/5
 
         // GET: Interview/Delete/5
         public ActionResult Delete(int id)
