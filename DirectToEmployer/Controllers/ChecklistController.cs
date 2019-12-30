@@ -22,49 +22,91 @@ namespace DirectToEmployer.Controllers
             return View();
         }
 
-        //////// GET: Checklist/Create
-        //////public ActionResult Create()
-        //////{
-        //////    return View();
-        //////}
-
-        //////// POST: Checklist/Create
-        //////[HttpPost]
-        //////public ActionResult Create(FormCollection collection)
-        //////{
-        //////    try
-        //////    {
-        //////        // TODO: Add insert logic here
-
-        //////        return RedirectToAction("Index");
-        //////    }
-        //////    catch
-        //////    {
-        //////        return View();
-        //////    }
-        //////}
-
         // GET: Checklist/Edit/5
         public ActionResult Edit(Guid id)
         {
-            var ChecklistToEdit = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            Checklist ChecklistToEdit = db.Checklists.Where(c => c.InterviewId == id).SingleOrDefault();
             return View(ChecklistToEdit);
         }
 
         // POST: Checklist/Edit/5
         [HttpPost]
-        public ActionResult Edit(Guid id, Checklist ChecklistToEdit)
+        public ActionResult Edit(Checklist ChecklistToEdit)
         {
-            ChecklistToEdit = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            //MVP but create a loop to go through all of the tasks to see if they're t/f save changes
+            var checklist = db.Checklists.Find(ChecklistToEdit.ChecklistId);
             if(ChecklistToEdit.CompanyResearch == true)
             {
+                checklist.CompanyResearch = true;
                 db.SaveChanges();
-                return RedirectToAction("Details", "Interview");
+            }
+
+            if(ChecklistToEdit.QuestionsToPrepare == true)
+            {
+                checklist.QuestionsToPrepare = true;
+                db.SaveChanges();
+            }
+
+            if(ChecklistToEdit.PracticeQuestions == true)
+            {
+                checklist.PracticeQuestions = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.ResponsesToPrepare == true)
+            {
+                checklist.ResponsesToPrepare = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PracticeResponses == true)
+            {
+                checklist.PracticeResponses = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.WhatToWear == true)
+            {
+                checklist.WhatToWear = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PrepareOutfit == true)
+            {
+                checklist.PrepareOutfit = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.WhatToBring == true)
+            {
+                checklist.WhatToBring = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PrepareInterviewEssentials == true)
+            {
+                checklist.PrepareInterviewEssentials = true;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.InterviewFollowUp == true)
+            {
+                checklist.InterviewFollowUp = true;
+                db.SaveChanges();
             }
 
             ChecklistToEdit.CompanyResearch = false;
+            ChecklistToEdit.QuestionsToPrepare = false;
+            ChecklistToEdit.PracticeQuestions = false;
+            ChecklistToEdit.ResponsesToPrepare = false;
+            ChecklistToEdit.PracticeResponses = false;
+            ChecklistToEdit.WhatToWear = false;
+            ChecklistToEdit.PrepareOutfit = false;
+            ChecklistToEdit.WhatToBring = false;
+            ChecklistToEdit.PrepareInterviewEssentials = false;
+            ChecklistToEdit.InterviewFollowUp = false;
             db.SaveChanges();
-            return RedirectToAction("Details", "Interview");
+            return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
         // GET: Checklist/CompanyResearchTips

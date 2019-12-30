@@ -13,8 +13,8 @@
         @Html.HiddenFor(model => model.InterviewId);
 
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ChecklistId)
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ChecklistId)*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.CompanyResearch, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -125,7 +125,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker")
 </div>
 
 @section Scripts {

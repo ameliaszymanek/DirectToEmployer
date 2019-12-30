@@ -31,9 +31,9 @@ namespace DirectToEmployer.Controllers
 
         // GET: Checklist/Details/5
         //have to put a hidden for on ViewInterviews so that the interviewId passes through
-        public ActionResult Details(Guid? id)
+        public ActionResult InterviewChecklist(Guid? id)
         {
-            Checklist checklist = db.Checklists.Find(id);
+            Checklist checklist = db.Checklists.Where(c => c.InterviewId == id).FirstOrDefault();
             return View(checklist);
         }
 

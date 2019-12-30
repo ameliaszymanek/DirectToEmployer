@@ -261,9 +261,18 @@
     <Content Include="Views\Interview\Edit.cshtml" />
     <Content Include="Views\Interview\Create.cshtml" />
     <Content Include="Views\Interview\Interview.cshtml" />
-    <Content Include="Views\Interview\Details.cshtml" />
+    <Content Include="Views\Interview\InterviewChecklist.cshtml" />
     <Content Include="Views\Checklist\Edit.cshtml" />
     <Content Include="Views\Checklist\CompanyResearchTips.cshtml" />
+    <Content Include="Views\Checklist\QuestionsToPrepareTips.cshtml" />
+    <Content Include="Views\Checklist\PracticeQuestionsTips.cshtml" />
+    <Content Include="Views\Checklist\ResponsesToPrepareTips.cshtml" />
+    <Content Include="Views\Checklist\PracticeResponsesTips.cshtml" />
+    <Content Include="Views\Checklist\WhatToWearTips.cshtml" />
+    <Content Include="Views\Checklist\PrepareOutfitTips.cshtml" />
+    <Content Include="Views\Checklist\WhatToBringTips.cshtml" />
+    <Content Include="Views\Checklist\PrepareInterviewEssentialsTips.cshtml" />
+    <Content Include="Views\Checklist\InterviewFollowUpTips.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

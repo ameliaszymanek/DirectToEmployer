@@ -19,22 +19,21 @@
         </th>
         <th></th>
     </tr>
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateAndTimeOfInterview)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @*might have to add more overloads*@
-            @Html.ActionLink("Edit", "Edit", "Interview", new { id = item.InterviewId }, null)
-            @Html.ActionLink("Details", "Details", "Interview", new { id = item.InterviewId}, null)
-            @Html.ActionLink("Delete", "Delete")
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAndTimeOfInterview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Interview", new { id = item.InterviewId }, null)
+                @Html.ActionLink("View Checklist", "InterviewChecklist", "Interview", new { id = item.InterviewId }, null)
+                @Html.ActionLink("Delete", "Delete")
+            </td>
+        </tr>
+    }
 </table>
 

@@ -1,0 +1,11 @@
+﻿@model DirectToEmployer.Models.Checklist
+
+<div>
+    <h4>Practice Responses Tips:</h4>
+
+    @Html.HiddenFor(model => model.InterviewId)
+    @Html.HiddenFor(model => model.ChecklistId)
+
+    <p>@Html.ActionLink("Back to checklist", "Details", "Interview")</p>
+</div>
+

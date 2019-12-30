@@ -1,19 +1,20 @@
 ﻿@model DirectToEmployer.Models.Checklist
 
 <div>
-    <h4>Checklist</h4>
+    <h4>Interview Checklist</h4>
     <hr />
     <dl class="dl-horizontal">
         @Html.HiddenFor(model => model.InterviewId)
         @Html.HiddenFor(model => model.ChecklistId)
+
         <dt>
             @Html.DisplayNameFor(model => model.CompanyResearch)
-            @* redirect to companyresearchtips *@
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.CompanyResearch)
-            @Html.ActionLink("Prepare", "CompanyResearchTips", "Checklist"@*, new { id = Model.ChecklistId }, null*@)
+            @Html.ActionLink("Prepare", "CompanyResearchTips", "Checklist")
+
         </dd>
 
         <dt>
@@ -22,6 +23,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.QuestionsToPrepare)
+            @Html.ActionLink("Prepare", "QuestionsToPrepareTips", "Checklist")
         </dd>
 
         <dt>
@@ -30,6 +32,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.PracticeQuestions)
+            @Html.ActionLink("Prepare", "PracticeQuestionsTips", "Checklist")
         </dd>
 
         <dt>
@@ -38,6 +41,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.ResponsesToPrepare)
+            @Html.ActionLink("Prepare", "ResponsesToPrepareTips", "Checklist")
         </dd>
 
         <dt>
@@ -46,6 +50,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.PracticeResponses)
+            @Html.ActionLink("Prepare", "PracticeResponsesTips", "Checklist")
         </dd>
 
         <dt>
@@ -54,6 +59,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.WhatToWear)
+            @Html.ActionLink("Prepare", "WhatToWearTips", "Checklist")
         </dd>
 
         <dt>
@@ -62,6 +68,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.PrepareOutfit)
+            @Html.ActionLink("Prepare", "PrepareOutfitTips", "Checklist")
         </dd>
 
         <dt>
@@ -70,6 +77,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.WhatToBring)
+            @Html.ActionLink("Prepare", "WhatToBringTips", "Checklist")
         </dd>
 
         <dt>
@@ -78,6 +86,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.PrepareInterviewEssentials)
+            @Html.ActionLink("Prepare", "PrepareInterviewEssentialsTips", "Checklist")
         </dd>
 
         <dt>
@@ -86,10 +95,11 @@
 
         <dd>
             @Html.DisplayFor(model => model.InterviewFollowUp)
+            @Html.ActionLink("Prepare", "InterviewFollowUpTips", "Checklist")
         </dd>
     </dl>
 </div>
 <p>
-    @*@Html.ActionLink("Edit Checklist", "Edit", "Checklist", new { id = Model.ChecklistId }, null) |*@
     @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker")
+    @Html.ActionLink("Edit Checklist", "Edit", "Checklist", new { id = Model.InterviewId }, null)
 </p>
