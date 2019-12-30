@@ -8,10 +8,12 @@
         @Html.HiddenFor(model => model.ChecklistId)
         <dt>
             @Html.DisplayNameFor(model => model.CompanyResearch)
+            @* redirect to companyresearchtips *@
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.CompanyResearch)
+            @Html.ActionLink("Prepare", "CompanyResearchTips", "Checklist"@*, new { id = Model.ChecklistId }, null*@)
         </dd>
 
         <dt>
@@ -88,6 +90,6 @@
     </dl>
 </div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ChecklistId }) |*@
-    @*@Html.ActionLink("Back to Interview", "Details")*@
+    @*@Html.ActionLink("Edit Checklist", "Edit", "Checklist", new { id = Model.ChecklistId }, null) |*@
+    @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker")
 </p>

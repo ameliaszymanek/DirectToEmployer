@@ -263,6 +263,7 @@
     <Content Include="Views\Interview\Interview.cshtml" />
     <Content Include="Views\Interview\Details.cshtml" />
     <Content Include="Views\Checklist\Edit.cshtml" />
+    <Content Include="Views\Checklist\CompanyResearchTips.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

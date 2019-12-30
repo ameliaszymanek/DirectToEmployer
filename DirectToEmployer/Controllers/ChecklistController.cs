@@ -67,6 +67,67 @@ namespace DirectToEmployer.Controllers
             return RedirectToAction("Details", "Interview");
         }
 
+        // GET: Checklist/CompanyResearchTips
+        public ActionResult CompanyResearchTips()
+        {
+            return View("CompanyResearchTips");
+        }
+
+        // GET: Checklist/QuestionsToPrepareTips
+        public ActionResult QuestionsToPrepareTips()
+        {
+            return View("QuestionsToPrepareTips");
+        }
+
+        //GET: Checklist/PracticeQuestionsTips
+        public ActionResult PracticeQuestionsTips()
+        {
+            return View("PracticeQuestionsTips");
+        }
+
+        //GET: Checklist/ResponsesToPrepareTips
+        public ActionResult ResponsesToPrepareTips()
+        {
+            return View("ResponsesToPrepareTips");
+        }
+
+        //GET: Checklist/PracticeResponsesTips
+        public ActionResult PracticeResponsesTips()
+        {
+            return View("PracticeResponsesTips");
+        }
+
+        //GET: Checklist/Tips
+        public ActionResult WhatToWearTips()
+        {
+            return View("WhatToWearTips");
+        }
+
+        //GET: Checklist/Tips
+        public ActionResult PrepareOutfitTips()
+        {
+            return View("PrepareOutfitTips");
+        }
+
+        //GET: Checklist/Tips
+        public ActionResult WhatToBringTips()
+        {
+            return View("WhatToBringTips");
+        }
+
+        //GET: Checklist/Tips
+        public ActionResult PrepareInterviewEssentialsTips()
+        {
+            return View("PrepareInterviewEssentialsTips");
+        }
+
+        //GET: Checklist/Tips
+        public ActionResult InterviewFollowUpTips()
+        {
+            return View("InterviewFollowUpTips");
+        }
+
+
         // GET: Checklist/Delete/5
         public ActionResult Delete(int id)
         {
