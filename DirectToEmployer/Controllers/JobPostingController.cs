@@ -24,6 +24,18 @@ namespace DirectToEmployer.Controllers
             return View(jobposting);
         }
 
+        public ActionResult PublicJobPosting (Guid? id)
+        {
+            JobPosting jobposting = db.JobPostings.Where(j => j.JobPostingId == id).FirstOrDefault();
+            return View(jobposting);
+        }
+
+        //get all open job postings
+        public ActionResult OpenJobPostings()
+        {
+            return View(db.JobPostings.ToList());
+        }
+
 
         // GET: JobPosting/Create
         public ActionResult Create(Guid? id)

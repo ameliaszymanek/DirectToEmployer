@@ -281,6 +281,7 @@
     <Content Include="Views\JobPosting\OpenJobPostings.cshtml" />
     <Content Include="Views\Employer\JobPostings.cshtml" />
     <Content Include="Views\JobPosting\Edit.cshtml" />
+    <Content Include="Views\JobPosting\PublicJobPosting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

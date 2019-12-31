@@ -1,0 +1,51 @@
+﻿@model DirectToEmployer.Models.JobPosting
+
+<div>
+    <h4>JobPosting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suspense)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suspense)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesiredSkills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesiredSkills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPostingSummary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPostingSummary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationChallenge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationChallenge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to open job postings", "OpenJobPostings", "JobPosting")
+</p>
