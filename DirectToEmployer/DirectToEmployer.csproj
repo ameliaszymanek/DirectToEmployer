@@ -172,6 +172,7 @@
     <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterviewController.cs" />
+    <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Controllers\JobseekerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +181,10 @@
     <Compile Include="Migrations\201912311426415_NinthMigration.cs" />
     <Compile Include="Migrations\201912311426415_NinthMigration.Designer.cs">
       <DependentUpon>201912311426415_NinthMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912311509129_TenthMigration.cs" />
+    <Compile Include="Migrations\201912311509129_TenthMigration.Designer.cs">
+      <DependentUpon>201912311509129_TenthMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -271,6 +276,11 @@
     <Content Include="Views\Checklist\WhatToBringTips.cshtml" />
     <Content Include="Views\Checklist\PrepareInterviewEssentialsTips.cshtml" />
     <Content Include="Views\Checklist\InterviewFollowUpTips.cshtml" />
+    <Content Include="Views\JobPosting\Create.cshtml" />
+    <Content Include="Views\JobPosting\JobPosting.cshtml" />
+    <Content Include="Views\JobPosting\OpenJobPostings.cshtml" />
+    <Content Include="Views\Employer\JobPostings.cshtml" />
+    <Content Include="Views\JobPosting\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +301,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912311426415_NinthMigration.resx">
       <DependentUpon>201912311426415_NinthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912311509129_TenthMigration.resx">
+      <DependentUpon>201912311509129_TenthMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

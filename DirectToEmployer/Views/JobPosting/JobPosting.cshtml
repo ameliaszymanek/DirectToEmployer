@@ -1,0 +1,39 @@
+﻿@model DirectToEmployer.Models.JobPosting
+
+
+@Html.HiddenFor(model => model.JobPostingId)
+<div>
+    <h4>JobPosting</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DesiredSkills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesiredSkills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPostingSummary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPostingSummary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationChallenge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationChallenge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", "JobPosting", new { id = Model.JobPostingId }, null)*@
+    @Html.ActionLink("Back to my job postings", "JobPostings", "Employer")
+</p>

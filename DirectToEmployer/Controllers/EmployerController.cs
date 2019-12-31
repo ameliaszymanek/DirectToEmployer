@@ -48,6 +48,16 @@ namespace DirectToEmployer.Controllers
             return View("Index");
         }
 
+        // GET: Employer/JobPostings
+        [HttpGet]
+        public ActionResult JobPostings()
+        {
+            var userId = User.Identity.GetUserId();
+            Employer employer = db.Employers.FirstOrDefault(e => e.ApplicationId == userId);
+            return View(db.JobPostings.Where(i => i.EmployerId == employer.EmployerId).ToList());
+        }
+
+
         // GET: Employer/Edit/5
         public ActionResult Edit(int id)
         {

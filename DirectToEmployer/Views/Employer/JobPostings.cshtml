@@ -1,0 +1,39 @@
+﻿@model List<DirectToEmployer.Models.JobPosting>
+
+@{ 
+    ViewBag.Title = "JobPostings";
+}
+
+<h2>Your Active Job Postings:</h2>
+
+<p>
+    @Html.ActionLink("Create a new job posting", "Create", "JobPosting")
+</p>
+
+<table>
+    <tr>
+        <th>
+            Job Title
+        </th>
+        <th>
+            Suspense
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suspense)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "JobPosting", new { id = item.JobPostingId}, null)
+                @Html.ActionLink("Details", "JobPosting", "JobPosting", new { id = item.JobPostingId}, null)
+                @*@Html.ActionLink("Delete", "Delete")*@
+            </td>
+        </tr>
+    }
+</table>
