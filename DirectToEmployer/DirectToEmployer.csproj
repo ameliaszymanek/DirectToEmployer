@@ -186,6 +186,10 @@
     <Compile Include="Migrations\201912311509129_TenthMigration.Designer.cs">
       <DependentUpon>201912311509129_TenthMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912311657276_EleventhMigration.cs" />
+    <Compile Include="Migrations\201912311657276_EleventhMigration.Designer.cs">
+      <DependentUpon>201912311657276_EleventhMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912311509129_TenthMigration.resx">
       <DependentUpon>201912311509129_TenthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912311657276_EleventhMigration.resx">
+      <DependentUpon>201912311657276_EleventhMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
