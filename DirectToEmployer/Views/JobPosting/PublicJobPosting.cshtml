@@ -1,5 +1,6 @@
 ﻿@model DirectToEmployer.Models.JobPosting
 
+@Html.HiddenFor(model => model.JobPostingId)
 <div>
     <h4>JobPosting</h4>
     <hr />
@@ -47,7 +48,7 @@
         <dt>
             Apply
         </dt>
-        <dd> @Html.ActionLink("Respond", "ApplicationResponse", "JobPosting")</dd>
+        <dd> @Html.ActionLink("Apply", "NewSubmission", "Application", new { id = Model.JobPostingId }, null)</dd>
 
     </dl>
 </div>

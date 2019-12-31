@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ChecklistController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -286,6 +287,8 @@
     <Content Include="Views\Employer\JobPostings.cshtml" />
     <Content Include="Views\JobPosting\Edit.cshtml" />
     <Content Include="Views\JobPosting\PublicJobPosting.cshtml" />
+    <Content Include="Views\Application\NewSubmission.cshtml" />
+    <Content Include="Views\Application\ApplicationSubmitted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
