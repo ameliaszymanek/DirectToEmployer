@@ -177,16 +177,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912191548206_InitialMigration.cs" />
-    <Compile Include="Migrations\201912191613379_SecondMigration.cs" />
-    <Compile Include="Migrations\201912191613379_SecondMigration.Designer.cs">
-      <DependentUpon>201912191613379_SecondMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201912311426415_NinthMigration.cs" />
+    <Compile Include="Migrations\201912311426415_NinthMigration.Designer.cs">
+      <DependentUpon>201912311426415_NinthMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Checklist.cs" />
-    <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Employer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Interview.cs" />
@@ -291,8 +289,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912191613379_SecondMigration.resx">
-      <DependentUpon>201912191613379_SecondMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912311426415_NinthMigration.resx">
+      <DependentUpon>201912311426415_NinthMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

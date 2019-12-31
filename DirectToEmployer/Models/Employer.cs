@@ -15,15 +15,12 @@ namespace DirectToEmployer.Models
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string Industry { get; set; }
+        public string CompanyName { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
 
-        [ForeignKey("Company")]
-        public Guid CompanyId { get; set; }
-        public Company Company { get; set; }
-
-        public IEnumerable<Company> Companies { get; set; }
     }
+
 }

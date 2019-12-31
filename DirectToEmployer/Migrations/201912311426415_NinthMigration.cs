@@ -3,7 +3,7 @@ namespace DirectToEmployer.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SecondMigration : DbMigration
+    public partial class NinthMigration : DbMigration
     {
         public override void Up()
         {
@@ -131,15 +131,6 @@ namespace DirectToEmployer.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.Companies",
-                c => new
-                    {
-                        CompanyId = c.Guid(nullable: false),
-                        CompanyName = c.String(),
-                    })
-                .PrimaryKey(t => t.CompanyId);
-            
-            CreateTable(
                 "dbo.Employers",
                 c => new
                     {
@@ -148,14 +139,12 @@ namespace DirectToEmployer.Migrations
                         LastName = c.String(),
                         EmailAddress = c.String(),
                         Industry = c.String(),
+                        CompanyName = c.String(),
                         ApplicationId = c.String(maxLength: 128),
-                        CompanyId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.EmployerId)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationId)
-                .ForeignKey("dbo.Companies", t => t.CompanyId, cascadeDelete: true)
-                .Index(t => t.ApplicationId)
-                .Index(t => t.CompanyId);
+                .Index(t => t.ApplicationId);
             
             CreateTable(
                 "dbo.JobPostings",
@@ -203,7 +192,6 @@ namespace DirectToEmployer.Migrations
             DropForeignKey("dbo.JobseekerApplications", "JobseekerId", "dbo.Jobseekers");
             DropForeignKey("dbo.JobseekerApplications", "ApplicationId", "dbo.Applications");
             DropForeignKey("dbo.JobPostings", "EmployerId", "dbo.Employers");
-            DropForeignKey("dbo.Employers", "CompanyId", "dbo.Companies");
             DropForeignKey("dbo.Employers", "ApplicationId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Checklists", "InterviewId", "dbo.Interviews");
             DropForeignKey("dbo.Interviews", "JobseekerId", "dbo.Jobseekers");
@@ -215,7 +203,6 @@ namespace DirectToEmployer.Migrations
             DropIndex("dbo.JobseekerApplications", new[] { "ApplicationId" });
             DropIndex("dbo.JobseekerApplications", new[] { "JobseekerId" });
             DropIndex("dbo.JobPostings", new[] { "EmployerId" });
-            DropIndex("dbo.Employers", new[] { "CompanyId" });
             DropIndex("dbo.Employers", new[] { "ApplicationId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
@@ -229,7 +216,6 @@ namespace DirectToEmployer.Migrations
             DropTable("dbo.JobseekerApplications");
             DropTable("dbo.JobPostings");
             DropTable("dbo.Employers");
-            DropTable("dbo.Companies");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");

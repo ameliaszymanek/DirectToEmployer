@@ -22,7 +22,6 @@ namespace DirectToEmployer.Models
     {
         public DbSet<Application> Applications { get; set; }
         public DbSet<Checklist> Checklists { get; set; }
-        public DbSet<Company> Companies {get; set;}
         public DbSet<Employer> Employers { get; set; }
         public DbSet<Interview> Interviews {get; set;}
         public DbSet<JobPosting> JobPostings {get; set;}

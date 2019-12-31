@@ -28,13 +28,14 @@ namespace DirectToEmployer.Controllers
         // GET: Employer/Create
         public ActionResult Create()
         {
-            var companies = db.Companies.ToList();
-            Employer Employer = new Employer()
-            {
-                Companies = companies
-            };
+            Employer Employer = new Employer();
             return View(Employer);
         }
+
+        //Company companies = db.Companies.ToList();
+        //{
+        //    Companies = companies
+        //};
 
         // POST: Employer/Create
         [HttpPost]
