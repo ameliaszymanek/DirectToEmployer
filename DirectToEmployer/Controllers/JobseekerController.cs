@@ -21,7 +21,6 @@ namespace DirectToEmployer.Controllers
 
         [HttpGet]
         public ActionResult ViewInterviews()
-        
         {
             var userId = User.Identity.GetUserId();
             //first find jobseeker logged in

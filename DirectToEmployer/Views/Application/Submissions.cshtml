@@ -1,0 +1,45 @@
+﻿@model List<DirectToEmployer.Models.Application>
+
+@{
+    ViewBag.Title = "Submissions";
+}
+
+<h2>Submissions:</h2>
+
+<table>
+    <tr>
+        <th>
+            Applicant Name
+        </th>
+        <th>
+            Applicant Email Address
+        </th>
+        <th>
+            Challenge Solution
+        </th>
+        <th>
+            Applicant Portfolio Link
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantEmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChallengeSolution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicantPortfolioLink)
+            </td>
+            <td>
+                @* where an employer will email to invite for interview *@
+            </td>
+        </tr>
+    }
+</table>

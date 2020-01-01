@@ -32,6 +32,7 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", "JobPosting", new { id = item.JobPostingId}, null)
                 @Html.ActionLink("Details", "JobPosting", "JobPosting", new { id = item.JobPostingId}, null)
+                @Html.ActionLink("Submissions", "Submissions", "Application", new { id = item.JobPostingId }, null)
                 @*@Html.ActionLink("Delete", "Delete")*@
             </td>
         </tr>

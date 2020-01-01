@@ -22,12 +22,6 @@ namespace DirectToEmployer.Controllers
             return View();
         }
 
-        // GET: Application/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         //Jobseeker responds to a jobposting
         // GET: Application/ NewSubmission
         public ActionResult NewSubmission(Guid? id)
@@ -40,18 +34,6 @@ namespace DirectToEmployer.Controllers
             new Application { ApplicationId = Guid.NewGuid() };
             return View(new Application { ApplicationId = Guid.NewGuid(), JobPostingId = jobPostingRespondingTo.JobPostingId });
         }
-
-        //public ActionResult NewSubmission(Guid? id, JobPosting jobPosting)
-        //{
-        //    //find logged in user
-        //    var userId = User.Identity.GetUserId();
-        //    Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId);
-        //    //jobPosting??
-
-        //    //create new application
-        //    new Application { ApplicationId = Guid.NewGuid() };
-        //    return View(new Application { ApplicationId = Guid.NewGuid(), JobPostingId = jobPosting.JobPostingId });
-        //}
 
         // POST: Application/NewSubmission
         [HttpPost]
@@ -79,6 +61,17 @@ namespace DirectToEmployer.Controllers
         public ActionResult ApplicationSubmitted()
         {
             return View("ApplicationSubmitted");
+        }
+
+        //GET: Application/Submissions/5
+        public ActionResult Submissions(Guid? id)
+        {
+            var userId = User.Identity.GetUserId();
+            Employer employer = db.Employers.FirstOrDefault(e => e.ApplicationId == userId);
+            //Guid coming in is jobposting id
+            JobPosting jobposting = db.JobPostings.Where(j => j.JobPostingId == id && j.EmployerId == employer.EmployerId).FirstOrDefault();
+            //find all applications linked to specific jobposting
+            return View(db.Applications.Where(a => a.JobPostingId == jobposting.JobPostingId).ToList());
         }
     }
 }

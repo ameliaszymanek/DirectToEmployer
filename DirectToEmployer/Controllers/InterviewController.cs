@@ -83,16 +83,6 @@ namespace DirectToEmployer.Controllers
             return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
-        //GET: Checklist/Edit/5
-
-        // public ActionResult EditChecklist(Guid id)
-        //{
-
-        //}
-
-
-        //POST: Checklist/Edit/5
-
         // GET: Interview/Delete/5
         public ActionResult Delete(int id)
         {
