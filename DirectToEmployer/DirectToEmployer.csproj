@@ -297,6 +297,7 @@
     <Content Include="Views\Application\ApplicationSubmitted.cshtml" />
     <Content Include="Views\Application\Submissions.cshtml" />
     <Content Include="Views\Gmail\Send.cshtml" />
+    <Content Include="Views\Gmail\EmailConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

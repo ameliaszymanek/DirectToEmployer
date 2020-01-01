@@ -19,7 +19,12 @@ namespace DirectToEmployer.Controllers
         public ActionResult Send(Gmail gmail)
         {
             gmail.SendEmail();
-            return View();
+            return RedirectToAction("EmailConfirmation");
+        }
+
+        public ActionResult EmailConfirmation()
+        {
+            return View("EmailConfirmation");
         }
 
     }
