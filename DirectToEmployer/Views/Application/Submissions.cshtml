@@ -38,7 +38,11 @@
                 @Html.DisplayFor(modelItem => item.ApplicantPortfolioLink)
             </td>
             <td>
-                @Html.ActionLink("Notify Applicant Interview", "Send", "Gmail")
+                @*@Html.ActionLink(" Send New", "Send", "Gmail", "Send", new { @class = "btn btn-default btn-sm glyphicon glyphicon-envelope"})*@
+                
+                <a href="@Url.Action("Send", "Gmail")" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                </a>
             </td>
         </tr>
     }
