@@ -1,9 +1,12 @@
 ﻿using DirectToEmployer.Models;
 using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -49,13 +52,14 @@ namespace DirectToEmployer.Controllers
 
         // POST: Interview/Create
         [HttpPost]
-        public ActionResult Create(Interview interview, Checklist checklist)
+        public async Task<ActionResult> Create(Interview interview, Checklist checklist)
         {
             //logged in user
             var userId = User.Identity.GetUserId();
-            Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId);
-            interview.JobseekerId = jobseeker.JobseekerId;
+            Jobseeker thisJobseeker = db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId);
+            interview.JobseekerId = thisJobseeker.JobseekerId;
             interview.InterviewId = Guid.NewGuid();
+            await GetDistanceAndDuration(thisJobseeker, interview);
             db.Interviews.Add(interview);
             checklist.ChecklistId = Guid.NewGuid();
             checklist.InterviewId = interview.InterviewId;
@@ -83,26 +87,46 @@ namespace DirectToEmployer.Controllers
             return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
-        // GET: Interview/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Interview/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public async Task GetDistanceAndDuration(Jobseeker jobseeker, Interview interview)
         {
-            try
+            string jobseekerAddress = jobseeker.HomeAddress;
+            string interviewAddress = interview.CompanyAddress;
+            var key = APIKey.GoogleDirectionsKey;
+            string url = $"https://maps.googleapis.com/maps/api/directions/json?origin={jobseekerAddress}&destination={interviewAddress}&key={key}";
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(url);
+            string jsonresult = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+                DirectionsJSON directionsJSON = JsonConvert.DeserializeObject<DirectionsJSON>(jsonresult);
+                string duration = directionsJSON.routes[0].legs[0].duration.text;
+                interview.DurationToInterview = duration;
+                string distance = directionsJSON.routes[0].legs[0].distance.text;
+                interview.DistanceToInterview = distance;
             }
         }
+
+        //// GET: Interview/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
+
+        //// POST: Interview/Delete/5
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

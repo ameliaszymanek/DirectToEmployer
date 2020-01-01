@@ -162,6 +162,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIKey.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Controllers\JobseekerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DirectionsJSON.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

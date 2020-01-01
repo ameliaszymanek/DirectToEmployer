@@ -17,6 +17,12 @@
         <th>
             Company Name
         </th>
+        <th>
+            Distance To Interview
+        </th>
+        <th>
+            Duration To Interview
+        </th>
         <th></th>
     </tr>
     @foreach (var item in Model)
@@ -27,6 +33,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistanceToInterview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurationToInterview)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", "Interview", new { id = item.InterviewId }, null)
