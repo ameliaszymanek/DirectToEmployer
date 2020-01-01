@@ -38,7 +38,7 @@
                 @Html.DisplayFor(modelItem => item.ApplicantPortfolioLink)
             </td>
             <td>
-                @* where an employer will email to invite for interview *@
+                @Html.ActionLink("Notify Applicant Interview", "Send", "Gmail")
             </td>
         </tr>
     }

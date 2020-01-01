@@ -171,6 +171,7 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ChecklistController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
+    <Compile Include="Controllers\GmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterviewController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
@@ -191,11 +192,16 @@
     <Compile Include="Migrations\201912311657276_EleventhMigration.Designer.cs">
       <DependentUpon>201912311657276_EleventhMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001011725359_TwelfthMigration.cs" />
+    <Compile Include="Migrations\202001011725359_TwelfthMigration.Designer.cs">
+      <DependentUpon>202001011725359_TwelfthMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Checklist.cs" />
     <Compile Include="Models\Employer.cs" />
+    <Compile Include="Models\Gmail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Interview.cs" />
     <Compile Include="Models\JobPosting.cs" />
@@ -290,6 +296,7 @@
     <Content Include="Views\Application\NewSubmission.cshtml" />
     <Content Include="Views\Application\ApplicationSubmitted.cshtml" />
     <Content Include="Views\Application\Submissions.cshtml" />
+    <Content Include="Views\Gmail\Send.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912311657276_EleventhMigration.resx">
       <DependentUpon>201912311657276_EleventhMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001011725359_TwelfthMigration.resx">
+      <DependentUpon>202001011725359_TwelfthMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
