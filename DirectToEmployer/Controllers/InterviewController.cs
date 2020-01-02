@@ -65,7 +65,7 @@ namespace DirectToEmployer.Controllers
             checklist.InterviewId = interview.InterviewId;
             db.Checklists.Add(checklist);
             db.SaveChanges();
-            return View("Interview");
+            return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
         // GET: Interview/Edit/5
