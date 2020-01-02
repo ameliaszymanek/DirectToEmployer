@@ -41,9 +41,20 @@
                 @Html.DisplayFor(modelItem => item.DurationToInterview)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Interview", new { id = item.InterviewId }, null)
-                @Html.ActionLink("View Checklist", "InterviewChecklist", "Interview", new { id = item.InterviewId }, null)
-                @Html.ActionLink("Delete", "Delete")
+                @*@Html.ActionLink("Edit", "Edit", "Interview", new { id = item.InterviewId }, null)*@
+                <a href="@Url.Action("Edit", "Interview", new { id = item.InterviewId }, null)" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </a>
+
+                @*@Html.ActionLink("View Checklist", "InterviewChecklist", "Interview", new { id = item.InterviewId }, null)*@
+                <a href="@Url.Action("InterviewChecklist", "Interview", new { id = item.InterviewId }, null)" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                </a>
+
+                @*@Html.ActionLink("Delete", "Delete")*@
+                <a href="@Url.Action("Delete", "Interview", new { id = item.InterviewId }, null)" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
             </td>
         </tr>
     }

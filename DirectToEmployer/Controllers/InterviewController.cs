@@ -107,26 +107,20 @@ namespace DirectToEmployer.Controllers
             }
         }
 
-        //// GET: Interview/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
+        // GET: Interview/Delete/5
+        public ActionResult Delete()
+        {
+            return View();
+        }
 
-        //// POST: Interview/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+        // POST: Interview/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Guid id)
+        {
+            Interview interview = db.Interviews.Find(id);
+            db.Interviews.Remove(interview);
+            db.SaveChanges();
+            return RedirectToAction("ViewInterviews", "Jobseeker");
+        }
     }
 }
