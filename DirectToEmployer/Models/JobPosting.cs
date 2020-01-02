@@ -12,6 +12,7 @@ namespace DirectToEmployer.Models
         [Key]
         public Guid JobPostingId { get; set; }
         public string JobTitle { get; set; }
+        public string CompanyName { get; set; }
         public DateTime Suspense { get; set; }
         public string DesiredSkills { get; set; }
         public string JobPostingSummary { get; set; }

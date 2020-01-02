@@ -56,7 +56,7 @@ namespace DirectToEmployer.Controllers
             jobposting.JobPostingId = Guid.NewGuid();
             db.JobPostings.Add(jobposting);
             db.SaveChanges();
-            return View("JobPosting");
+            return RedirectToAction("JobPostings", "Employer");
         }
 
         // GET: JobPosting/Edit/5
@@ -76,25 +76,19 @@ namespace DirectToEmployer.Controllers
         }
 
         // GET: JobPosting/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete()
         {
             return View();
         }
 
         // POST: JobPosting/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Guid id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                JobPosting jobPosting = db.JobPostings.Find(id);
+                db.JobPostings.Remove(jobPosting);
+                db.SaveChanges();
+                return RedirectToAction("JobPostings", "Employer");
         }
     }
 }
