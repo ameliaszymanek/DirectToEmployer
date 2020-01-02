@@ -25,7 +25,7 @@ namespace DirectToEmployer.Controllers
         // GET: Checklist/Edit/5
         public ActionResult Edit(Guid id)
         {
-            Checklist ChecklistToEdit = db.Checklists.Where(c => c.InterviewId == id).SingleOrDefault();
+            Checklist ChecklistToEdit = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
             return View(ChecklistToEdit);
         }
 
@@ -34,8 +34,8 @@ namespace DirectToEmployer.Controllers
         public ActionResult Edit(Checklist ChecklistToEdit)
         {
             //MVP but create a loop to go through all of the tasks to see if they're t/f save changes
-            var checklist = db.Checklists.Find(ChecklistToEdit.ChecklistId);
-            if(ChecklistToEdit.CompanyResearch == true)
+            Checklist checklist = db.Checklists.Find(ChecklistToEdit.ChecklistId); 
+            if (ChecklistToEdit.CompanyResearch == true)
             {
                 checklist.CompanyResearch = true;
                 db.SaveChanges();
@@ -95,78 +95,87 @@ namespace DirectToEmployer.Controllers
                 db.SaveChanges();
             }
 
-            ChecklistToEdit.CompanyResearch = false;
-            ChecklistToEdit.QuestionsToPrepare = false;
-            ChecklistToEdit.PracticeQuestions = false;
-            ChecklistToEdit.ResponsesToPrepare = false;
-            ChecklistToEdit.PracticeResponses = false;
-            ChecklistToEdit.WhatToWear = false;
-            ChecklistToEdit.PrepareOutfit = false;
-            ChecklistToEdit.WhatToBring = false;
-            ChecklistToEdit.PrepareInterviewEssentials = false;
-            ChecklistToEdit.InterviewFollowUp = false;
-            db.SaveChanges();
+            //ChecklistToEdit.QuestionsToPrepare = false;
+            //ChecklistToEdit.PracticeQuestions = false;
+            //ChecklistToEdit.ResponsesToPrepare = false;
+            //ChecklistToEdit.PracticeResponses = false;
+            //ChecklistToEdit.WhatToWear = false;
+            //ChecklistToEdit.PrepareOutfit = false;
+            //ChecklistToEdit.WhatToBring = false;
+            //ChecklistToEdit.PrepareInterviewEssentials = false;
+            //ChecklistToEdit.InterviewFollowUp = false;
+            //db.SaveChanges();
             return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
         // GET: Checklist/CompanyResearchTips
-        public ActionResult CompanyResearchTips()
+        public ActionResult CompanyResearchTips(Guid id)
         {
-            return View("CompanyResearchTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         // GET: Checklist/QuestionsToPrepareTips
-        public ActionResult QuestionsToPrepareTips()
+        public ActionResult QuestionsToPrepareTips(Guid id)
         {
-            return View("QuestionsToPrepareTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/PracticeQuestionsTips
-        public ActionResult PracticeQuestionsTips()
+        public ActionResult PracticeQuestionsTips(Guid id)
         {
-            return View("PracticeQuestionsTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/ResponsesToPrepareTips
-        public ActionResult ResponsesToPrepareTips()
+        public ActionResult ResponsesToPrepareTips(Guid id)
         {
-            return View("ResponsesToPrepareTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/PracticeResponsesTips
-        public ActionResult PracticeResponsesTips()
+        public ActionResult PracticeResponsesTips(Guid id)
         {
-            return View("PracticeResponsesTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/Tips
-        public ActionResult WhatToWearTips()
+        public ActionResult WhatToWearTips(Guid id)
         {
-            return View("WhatToWearTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/Tips
-        public ActionResult PrepareOutfitTips()
+        public ActionResult PrepareOutfitTips(Guid id)
         {
-            return View("PrepareOutfitTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/Tips
-        public ActionResult WhatToBringTips()
+        public ActionResult WhatToBringTips(Guid id)
         {
-            return View("WhatToBringTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/Tips
-        public ActionResult PrepareInterviewEssentialsTips()
+        public ActionResult PrepareInterviewEssentialsTips(Guid id)
         {
-            return View("PrepareInterviewEssentialsTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
         //GET: Checklist/Tips
-        public ActionResult InterviewFollowUpTips()
+        public ActionResult InterviewFollowUpTips(Guid id)
         {
-            return View("InterviewFollowUpTips");
+            Checklist checklistTask = db.Checklists.Where(c => c.ChecklistId == id).SingleOrDefault();
+            return View(checklistTask);
         }
 
 

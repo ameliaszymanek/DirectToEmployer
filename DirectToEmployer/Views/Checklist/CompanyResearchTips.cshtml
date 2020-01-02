@@ -1,9 +1,8 @@
 ﻿@model DirectToEmployer.Models.Checklist
 
-@* understand viewbag better *@
-@*@{
+@{
     ViewBag.Title = "CompanyResearchTips";
-}*@
+}
 
 <div>
     <h4>Company Research Tips:</h4>
@@ -11,6 +10,6 @@
     @Html.HiddenFor(model => model.InterviewId)
     @Html.HiddenFor(model => model.ChecklistId)
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview")</p>
+    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
 </div>
 

@@ -9,8 +9,8 @@
         <h4>Checklist</h4>
         
         @Html.ValidationSummary(true, "", new { @class = "text-danger"})
-        @Html.HiddenFor(model => model.ChecklistId);
-        @Html.HiddenFor(model => model.InterviewId);
+        @Html.HiddenFor(model => model.ChecklistId)
+        @Html.HiddenFor(model => model.InterviewId)
 
         <hr />
         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -125,7 +125,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker")
+    @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker", new { id = Model.ChecklistId }, null)
 </div>
 
 @section Scripts {

@@ -1,5 +1,7 @@
 ﻿@model DirectToEmployer.Models.Checklist
-
+@{
+    ViewBag.Title = "InterviewChecklist";
+}
 <div>
     <h4>Interview Checklist</h4>
     <hr />
@@ -8,98 +10,98 @@
         @Html.HiddenFor(model => model.ChecklistId)
 
         <dt>
-            @Html.DisplayNameFor(model => model.CompanyResearch)
-        </dt>
-
-        <dd>
             @Html.DisplayFor(model => model.CompanyResearch)
-            @Html.ActionLink("Prepare", "CompanyResearchTips", "Checklist")
-
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QuestionsToPrepare)
+            @Html.ActionLink("Prepare", "CompanyResearchTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.CompanyResearch)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.QuestionsToPrepare)
-            @Html.ActionLink("Prepare", "QuestionsToPrepareTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PracticeQuestions)
+            @Html.ActionLink("Prepare", "QuestionsToPrepareTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.QuestionsToPrepare)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.PracticeQuestions)
-            @Html.ActionLink("Prepare", "PracticeQuestionsTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ResponsesToPrepare)
+            @Html.ActionLink("Prepare", "PracticeQuestionsTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.PracticeQuestions)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.ResponsesToPrepare)
-            @Html.ActionLink("Prepare", "ResponsesToPrepareTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PracticeResponses)
+            @Html.ActionLink("Prepare", "ResponsesToPrepareTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.ResponsesToPrepare)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.PracticeResponses)
-            @Html.ActionLink("Prepare", "PracticeResponsesTips", "Checklist")
-        </dd>
+            @Html.ActionLink("Prepare", "PracticeResponsesTips", "Checklist", new { id = Model.ChecklistId }, null)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WhatToWear)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.PracticeResponses)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.WhatToWear)
-            @Html.ActionLink("Prepare", "WhatToWearTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PrepareOutfit)
+            @Html.ActionLink("Prepare", "WhatToWearTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.WhatToWear)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.PrepareOutfit)
-            @Html.ActionLink("Prepare", "PrepareOutfitTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WhatToBring)
+            @Html.ActionLink("Prepare", "PrepareOutfitTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.PrepareOutfit)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.WhatToBring)
-            @Html.ActionLink("Prepare", "WhatToBringTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PrepareInterviewEssentials)
+            @Html.ActionLink("Prepare", "WhatToBringTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.WhatToBring)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.PrepareInterviewEssentials)
-            @Html.ActionLink("Prepare", "PrepareInterviewEssentialsTips", "Checklist")
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InterviewFollowUp)
+            @Html.ActionLink("Prepare", "PrepareInterviewEssentialsTips", "Checklist", new { id = Model.ChecklistId }, null)
         </dt>
 
         <dd>
+            @Html.DisplayNameFor(model => model.PrepareInterviewEssentials)
+        </dd>
+
+        <dt>
             @Html.DisplayFor(model => model.InterviewFollowUp)
-            @Html.ActionLink("Prepare", "InterviewFollowUpTips", "Checklist")
+            @Html.ActionLink("Prepare", "InterviewFollowUpTips", "Checklist", new { id = Model.ChecklistId }, null)
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.InterviewFollowUp)
         </dd>
     </dl>
 </div>
 <p>
     @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker")
-    @Html.ActionLink("Edit Checklist", "Edit", "Checklist", new { id = Model.InterviewId }, null)
+    @Html.ActionLink("Edit Checklist", "Edit", "Checklist", new { id = Model.ChecklistId }, null)
 </p>
