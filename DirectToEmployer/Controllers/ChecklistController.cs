@@ -95,16 +95,67 @@ namespace DirectToEmployer.Controllers
                 db.SaveChanges();
             }
 
-            //ChecklistToEdit.QuestionsToPrepare = false;
-            //ChecklistToEdit.PracticeQuestions = false;
-            //ChecklistToEdit.ResponsesToPrepare = false;
-            //ChecklistToEdit.PracticeResponses = false;
-            //ChecklistToEdit.WhatToWear = false;
-            //ChecklistToEdit.PrepareOutfit = false;
-            //ChecklistToEdit.WhatToBring = false;
-            //ChecklistToEdit.PrepareInterviewEssentials = false;
-            //ChecklistToEdit.InterviewFollowUp = false;
-            //db.SaveChanges();
+            if (ChecklistToEdit.CompanyResearch == false)
+            {
+                checklist.CompanyResearch = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.QuestionsToPrepare == false)
+            {
+                checklist.QuestionsToPrepare = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PracticeQuestions == false)
+            {
+                checklist.PracticeQuestions = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.ResponsesToPrepare == false)
+            {
+                checklist.ResponsesToPrepare = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PracticeResponses == false)
+            {
+                checklist.PracticeResponses = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.WhatToWear == false)
+            {
+                checklist.WhatToWear = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PrepareOutfit == false)
+            {
+                checklist.PrepareOutfit = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.WhatToBring == false)
+            {
+                checklist.WhatToBring = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.PrepareInterviewEssentials == false)
+            {
+                checklist.PrepareInterviewEssentials = false;
+                db.SaveChanges();
+            }
+
+            if (ChecklistToEdit.InterviewFollowUp == false)
+            {
+                checklist.InterviewFollowUp = false;
+                db.SaveChanges();
+            }
+
+
             return RedirectToAction("ViewInterviews", "Jobseeker");
         }
 
