@@ -11,7 +11,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.CompanyResearch)
-            @Html.ActionLink("Prepare", "CompanyResearchTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("CompanyResearchTips", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -20,7 +23,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.QuestionsToPrepare)
-            @Html.ActionLink("Prepare", "QuestionsToPrepareTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("QuestionsToPrepare", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -29,7 +35,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.PracticeQuestions)
-            @Html.ActionLink("Prepare", "PracticeQuestionsTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("PracticeQuestions", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -38,7 +47,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.ResponsesToPrepare)
-            @Html.ActionLink("Prepare", "ResponsesToPrepareTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("ResponsesToPrepare", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -47,7 +59,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.PracticeResponses)
-            @Html.ActionLink("Prepare", "PracticeResponsesTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("PracticeResponses", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
 
         </dt>
 
@@ -57,7 +72,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.WhatToWear)
-            @Html.ActionLink("Prepare", "WhatToWearTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("WhatToWear", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -66,7 +84,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.PrepareOutfit)
-            @Html.ActionLink("Prepare", "PrepareOutfitTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("PrepareOutfit", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -75,7 +96,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.WhatToBring)
-            @Html.ActionLink("Prepare", "WhatToBringTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("WhatToBring", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -84,7 +108,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.PrepareInterviewEssentials)
-            @Html.ActionLink("Prepare", "PrepareInterviewEssentialsTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("PrepareInterviewEssentials", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -93,7 +120,10 @@
 
         <dt>
             @Html.DisplayFor(model => model.InterviewFollowUp)
-            @Html.ActionLink("Prepare", "InterviewFollowUpTips", "Checklist", new { id = Model.ChecklistId }, null)
+
+            <a href="@Url.Action("InterviewFollowUp", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
         </dt>
 
         <dd>
@@ -102,6 +132,11 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker")
-    @Html.ActionLink("Edit Checklist", "Edit", "Checklist", new { id = Model.ChecklistId }, null)
+    <a href="@Url.Action("ViewInterviews", "Jobseeker")" class="btn btn-warning">
+        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+    </a>
+
+    <a href="@Url.Action("Edit", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+    </a>
 </p>
