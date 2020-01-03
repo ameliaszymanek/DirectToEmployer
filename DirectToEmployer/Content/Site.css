@@ -26,10 +26,24 @@ textarea {
 .navbar {
     background: #153F4C;
     font: white;
-
+    font-family: 'Montserrat Subrayada', sans-serif;
 }
 
 .jumbotron {
      
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #75C9BE;
+    border-color: #75C9BE;
+}
+
+h2 {
+    font-family: 'Staatliches', cursive;
+}
+
+body {
+    font-family: 'Istok Web', sans-serif;
 }
 

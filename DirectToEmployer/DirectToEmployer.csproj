@@ -278,7 +278,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Jobseeker\Create.cshtml" />
-    <Content Include="Views\Jobseeker\Index.cshtml" />
     <Content Include="Views\Employer\Index.cshtml" />
     <Content Include="Views\Employer\Create.cshtml" />
     <Content Include="Views\Jobseeker\ViewInterviews.cshtml" />
@@ -310,9 +309,13 @@
     <Content Include="Views\Gmail\EmailConfirmation.cshtml" />
     <Content Include="Views\JobPosting\Delete.cshtml" />
     <Content Include="Views\Interview\Delete.cshtml" />
+    <Content Include="Views\Account\_LayoutJobseeker.cshtml" />
+    <Content Include="Views\Shared\_LayoutJobseeker.cshtml" />
+    <Content Include="Views\Jobseeker\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Layouts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

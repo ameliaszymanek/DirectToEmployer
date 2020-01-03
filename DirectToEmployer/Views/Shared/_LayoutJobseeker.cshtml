@@ -26,7 +26,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Job Postings", "OpenJobPostings", "JobPosting")</li>
-                    </ul>
+                    <li>@Html.ActionLink("Interviews", "ViewInterviews", "Jobseeker")</li>
+                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -35,7 +36,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Direct To Employer</p>
         </footer>
     </div>
 
@@ -44,3 +45,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

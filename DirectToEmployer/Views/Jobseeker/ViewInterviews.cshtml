@@ -5,17 +5,13 @@
 
 <h2>Your Past/Upcoming Interviews:</h2>
 
-<p>
-    @Html.ActionLink("Prepare for a new interview", "Create", "Interview")
-</p>
-
 <table class="table">
     <tr>
         <th>
-            Date Of Interview
+            Date
         </th>
         <th>
-            Company Name
+            Company
         </th>
         <th>
             Distance To Interview
@@ -59,4 +55,10 @@
         </tr>
     }
 </table>
+
+<p>
+    <a href="@Url.Action("Create", "Interview")" class="btn btn-warning">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </a>
+</p>
 

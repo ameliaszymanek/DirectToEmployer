@@ -12,11 +12,12 @@ using DirectToEmployer.Models;
 
 namespace DirectToEmployer.Controllers
 {
-    [Authorize]
+   [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
         private ApplicationDbContext db;
 
         public AccountController()
@@ -24,11 +25,25 @@ namespace DirectToEmployer.Controllers
             db = new ApplicationDbContext();
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;
         }
+
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+        }
+
 
         public ApplicationSignInManager SignInManager
         {
@@ -158,8 +173,11 @@ namespace DirectToEmployer.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    result = await UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
+                    //tie user role to the 
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

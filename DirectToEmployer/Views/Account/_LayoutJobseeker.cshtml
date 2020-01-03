@@ -6,6 +6,10 @@
     <title>@ViewBag.Title - Direct To Employer</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Html.Partial("_LayoutJobseeker")
+    @{
+        Html.RenderPartial("_LayoutJobseeker");
+    }
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Bebas+Neue|Cute+Font|Istok+Web|Josefin+Sans|Josefin+Slab|Julius+Sans+One|Markazi+Text|Monoton|Montserrat+Subrayada|Passion+One|Poiret+One|Prata|Satisfy|Sorts+Mill+Goudy|Staatliches&display=swap" rel="stylesheet">
 
 
@@ -26,7 +30,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Job Postings", "OpenJobPostings", "JobPosting")</li>
-                    </ul>
+                    <li>@Html.ActionLink("Interviews", "ViewInterviews", "Jobseeker")</li>
+                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -35,7 +40,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Direct To Employer</p>
         </footer>
     </div>
 
@@ -44,3 +49,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

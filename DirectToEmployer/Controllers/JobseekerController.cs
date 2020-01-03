@@ -15,8 +15,9 @@ namespace DirectToEmployer.Controllers
         // GET: Jobseeker
         public ActionResult Index()
         {
-            string userId = User.Identity.GetUserId();
-            return View(db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId));
+            //string userId = User.Identity.GetUserId();
+            //return View(db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId));
+            return View();
         }
 
         [HttpGet]
@@ -38,7 +39,7 @@ namespace DirectToEmployer.Controllers
         // GET: Jobseeker/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new Jobseeker());
         }
 
         // POST: Jobseeker/Create
@@ -49,7 +50,7 @@ namespace DirectToEmployer.Controllers
             Jobseeker.ApplicationId = User.Identity.GetUserId();
             db.Jobseekers.Add(Jobseeker);
             db.SaveChanges();
-            return View("Index");
+            return RedirectToAction("Index", "Jobseeker", new { id = Jobseeker.JobseekerId });
         }
 
         // GET: Jobseeker/Edit/5

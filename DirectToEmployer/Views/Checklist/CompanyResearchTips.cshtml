@@ -4,15 +4,35 @@
     ViewBag.Title = "CompanyResearchTips";
 }
 
-    <div>
+<div>
+    <center>
         <h4>Company Research Tips:</h4>
 
         @Html.HiddenFor(model => model.InterviewId)
         @Html.HiddenFor(model => model.ChecklistId)
 
-        @*<p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>*@
-        <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
-            <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
-        </a>
-    </div>
+        <div class="col-md-3">
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <h2>Resources</h2>
+            <p>
+                helpful resource
+                helpful resource
+                helpful resource
+            </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Research</h2>
+            <p>Use your resources to conduct thorough research for the company you are interviewing with. </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Ready</h2>
+            <p>You're interiew ready! </p>
+
+        </div>
+    </center>
+</div>
 

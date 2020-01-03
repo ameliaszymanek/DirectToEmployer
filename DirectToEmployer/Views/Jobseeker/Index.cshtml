@@ -1,7 +1,9 @@
-﻿@model DirectToEmployer.Models.Jobseeker
+﻿
+@model DirectToEmployer.Models.Jobseeker
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
 
 <h2>Index</h2>
@@ -9,3 +11,4 @@
 @* add new interview *@
 
 @Html.ActionLink("Prepare for a new interview", "Create", "Interview")
+

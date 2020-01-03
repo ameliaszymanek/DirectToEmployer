@@ -10,6 +10,10 @@ namespace DirectToEmployer.Controllers
     {
         public ActionResult Index()
         {
+            if (User.IsInRole("Jobseeker"))
+            {
+                return RedirectToAction("Index", "Jobseeker");
+            }
             return View();
         }
 
