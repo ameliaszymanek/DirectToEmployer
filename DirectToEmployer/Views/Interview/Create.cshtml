@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
 
 <h2>Create</h2>
@@ -39,22 +40,6 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.DistanceToInterview, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DistanceToInterview, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DistanceToInterview, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DurationToInterview, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DurationToInterview, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DurationToInterview, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -64,7 +49,9 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("ViewInterviews", "Jobseeker")" class="btn btn-warning">
+        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+    </a>
 </div>
 
 @section Scripts {

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
 
 <h2>Edit</h2>
@@ -67,7 +68,9 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Interviews", "ViewInterviews", "Jobseeker")
+    <a href="@Url.Action("ViewInterviews", "Jobseeker")" class="btn btn-warning">
+        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+    </a>
 </div>
 
 @section Scripts {

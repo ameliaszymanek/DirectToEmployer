@@ -1,5 +1,7 @@
 ﻿@model DirectToEmployer.Models.Checklist
-
+@{
+    Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
+}
 
 @using (Html.BeginForm())
 {
@@ -7,14 +9,14 @@
 
     <div class="form-horizontal">
         <h4>Checklist</h4>
-        
-        @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ChecklistId)
         @Html.HiddenFor(model => model.InterviewId)
 
         <hr />
         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ChecklistId)*@
+            @Html.HiddenFor(model => model.ChecklistId)*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.CompanyResearch, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -125,7 +127,9 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Interview", "ViewInterviews", "Jobseeker", new { id = Model.ChecklistId }, null)
+    <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+    </a>
 </div>
 
 @section Scripts {

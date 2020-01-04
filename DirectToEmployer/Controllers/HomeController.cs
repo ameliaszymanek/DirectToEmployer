@@ -14,12 +14,23 @@ namespace DirectToEmployer.Controllers
             {
                 return RedirectToAction("Index", "Jobseeker");
             }
+            if (User.IsInRole("Employer"))
+            {
+                return RedirectToAction("Index", "Employer");
+            }
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            if (User.IsInRole("Jobseeker"))
+            {
+                return RedirectToAction("About", "Jobseeker");
+            }
+            if (User.IsInRole("Employer"))
+            {
+                return RedirectToAction("About", "Employer");
+            }
 
             return View();
         }

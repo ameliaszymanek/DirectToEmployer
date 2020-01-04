@@ -1,6 +1,9 @@
 ﻿@model DirectToEmployer.Models.JobPosting
 
 @Html.HiddenFor(model => model.JobPostingId)
+@{ 
+    Layout = "~/Views/Shared/_LayoutEmployer.cshtml";
+}
 
 <h3>Are you sure you want to delete this?</h3>
 <div>

@@ -312,6 +312,9 @@
     <Content Include="Views\Account\_LayoutJobseeker.cshtml" />
     <Content Include="Views\Shared\_LayoutJobseeker.cshtml" />
     <Content Include="Views\Jobseeker\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmployer.cshtml" />
+    <Content Include="Views\Employer\About.cshtml" />
+    <Content Include="Views\Jobseeker\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,8 +15,14 @@ namespace DirectToEmployer.Controllers
         // GET: Employer
         public ActionResult Index()
         {
-            string userId = User.Identity.GetUserId();
-            return View(db.Employers.FirstOrDefault(j => j.ApplicationId == userId));
+            //string userId = User.Identity.GetUserId();
+            //return View(db.Employers.FirstOrDefault(j => j.ApplicationId == userId));
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
         }
 
         // GET: Employer/Details/5
@@ -45,7 +51,7 @@ namespace DirectToEmployer.Controllers
             Employer.ApplicationId = User.Identity.GetUserId();
             db.Employers.Add(Employer);
             db.SaveChanges();
-            return View("Index");
+            return RedirectToAction("Index", "Employer", new { id = Employer.EmployerId});
         }
 
         // GET: Employer/JobPostings

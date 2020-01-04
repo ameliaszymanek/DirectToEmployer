@@ -1,5 +1,9 @@
 ﻿@model DirectToEmployer.Models.Interview
 
+@{ 
+    Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
+}
+
 @Html.HiddenFor(model => model.InterviewId)
 
 <h3>Are you sure you want to delete this?</h3>
@@ -10,9 +14,14 @@
     {
         @Html.AntiForgeryToken()
 
+        <div>
+            <a href="@Url.Action("ViewInterviews", "Jobseeker")" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to my job postings", "JobPostings", "Employer")
+            <input type="submit" value="Delete" class="btn btn-default" />
         </div>
     }
 </div>
