@@ -315,6 +315,8 @@
     <Content Include="Views\Shared\_LayoutEmployer.cshtml" />
     <Content Include="Views\Employer\About.cshtml" />
     <Content Include="Views\Jobseeker\About.cshtml" />
+    <Content Include="Views\Employer\ApplicationHome.cshtml" />
+    <Content Include="Views\Jobseeker\ApplicationHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

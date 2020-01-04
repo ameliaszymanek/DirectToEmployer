@@ -35,6 +35,20 @@ namespace DirectToEmployer.Controllers
             return View();
         }
 
+        public ActionResult ApplicationHome()
+        {
+            if (User.IsInRole("Jobseeker"))
+            {
+                return RedirectToAction("ApplicationHome", "Jobseeker");
+            }
+            if (User.IsInRole("Employer"))
+            {
+                return RedirectToAction("ApplicationHome", "Employer");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

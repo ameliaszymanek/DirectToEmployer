@@ -63,6 +63,10 @@ namespace DirectToEmployer.Controllers
             return View(db.JobPostings.Where(i => i.EmployerId == employer.EmployerId).ToList());
         }
 
+        public ActionResult ApplicationHome()
+        {
+            return View();
+        }
 
         // GET: Employer/Edit/5
         public ActionResult Edit(int id)

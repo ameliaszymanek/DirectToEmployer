@@ -19,13 +19,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Direct To Employer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Direct To Employer", "ApplicationHome", "Employer", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Job Postings", "OpenJobPostings", "JobPosting")</li>
                     <li>@Html.ActionLink("My Job Postings", "JobPostings", "Employer")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

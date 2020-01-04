@@ -24,6 +24,11 @@ namespace DirectToEmployer.Controllers
             return View();
         }
 
+        public ActionResult ApplicationHome()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ActionResult ViewInterviews()
         {
