@@ -1,14 +1,46 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
+
+
 <div>
-    <h4>Prepare Interview Essentials Tips:</h4>
+    <h4>Tips to help you prepare your interview essentials</h4>
+    <p>
+        Like your interview outfit, taking care of your interview essentials with enough time to spare will ease your mind on the interview day. Preparation remains key!
+    </p>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+    <div>
+        <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+            <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+        </a>
+    </div>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
+</div>
+
+<div class="col-md-4">
+    <h2>One Week Before</h2>
+    <p>
+        Gather necessary emergency items
+    </p>
+</div>
+<div class="col-md-4">
+    <h2>3 Days Before</h2>
+    <p>
+        Print out extra copies of your resume <br /><br />
+        Find a nice portfolio in good condition to carry your pad of paper and pen in
+
+    </p>
+</div>
+<div class="col-md-4">
+    <h2>Night Before</h2>
+    <p>
+        Have your briefcase/portfolio/purse packed and ready<br /><br />
+
+    </p>
+
 </div>
 

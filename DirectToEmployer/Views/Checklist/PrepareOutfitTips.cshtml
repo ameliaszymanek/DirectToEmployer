@@ -1,14 +1,47 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4>Prepare Outfit Tips:</h4>
+    <div>
+        <h4>Tips to help you prepare your interview outfit</h4>
+        <p>
+            Look good, feel great! By taking care of your outfit with enough time to spare, it'll ease your mind on the interview day. Preparation is key!
+        </p>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+        <div>
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
+    </div>
+
+<div class="col-md-4">
+    <h2>One Week Before</h2>
+    <p>
+        Take necessary clothing to the dry cleaners
+    </p>
+</div>
+
+<div class="col-md-4">
+    <h2>3 Days Before</h2>
+    <p>Pick up clothing items from the dry cleaners<br /><br />
+        Wash any other clothing items<br />
+    </p>
+</div>
+
+<div class="col-md-4">
+    <h2>Night Before</h2>
+    <p>
+        Iron anything that needs ironing<br /><br />
+        Take a lint roller to your clothes<br /><br />
+        Shine shoes<br /><br />
+        Set your outfit and accessories out so it's ready for you in the morning<br /><br />
+
+        </p>
+
 </div>
 

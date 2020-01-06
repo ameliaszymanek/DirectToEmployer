@@ -1,14 +1,60 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4>Practice Responses Tips:</h4>
+    <div>
+        <h4>Tips to help you practice responding to interview questions</h4>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+        <p>
+            Now that you have prepared responses to questions you could be asked in an interview it is time to practice! While writing down responses to questions is very important, physically answering them out loud will help even more. Below you will find tips on how to practice your responses.
+        </p>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
-</div>
+        <div>
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2>How do I practice responses?</h2>
+        <h4>Methods</h4>
+        <p>
+            Practice in front of a mirror. It may seem awkward but the way you present yourself while interviewing is very important.<br />
+            Record your voice or a video of yourself answering questions.<br />
+            Have a friend or family member ask you practice interview questions.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>What to remember when practicing</h2>
+        <h4>Best Practices</h4>
+        <p>
+            Be positive and enthusiastic<br /><br />
+            Remain attentive and eager to listen<br /><br />
+            Listen more than you talk<br /><br />
+            Offer a firm whole-hand handshake before and after the interview<br /><br />
+            Sit up straight and lean into the interviewer slightly<br /><br />
+            Use natural gestures<br /><br />
+            Notice nonverbal cues of the interviewer (i.e. facial expressions)<br /><br />
+
+            <strong><h5>The STAR technique</h5></strong>
+            <strong>(Prepare)</strong> Listen to the question and think of an event.<br />
+            <strong>S | </strong>Situation: describe the event or situation that you were in.<br />
+            <strong>T | </strong>Task: Explain the task you had to complete.<br />
+            <strong>A | </strong>Action: Describe the specific actions you took to complete the task.<br />
+            <strong>R | </strong>Result: Close with the result of your efforts.<br /><br />
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Review your responses</h2>
+        <h4>Be introspective</h4>
+        <p>
+            Review your recordings or ask for feedback from a friend or family member after practicing.<br />
+        </p>
+    </div>
 

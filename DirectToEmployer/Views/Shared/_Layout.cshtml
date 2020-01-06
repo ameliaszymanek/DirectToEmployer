@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - Direct To Employer</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Bebas+Neue|Cute+Font|Istok+Web|Josefin+Sans|Josefin+Slab|Julius+Sans+One|Markazi+Text|Monoton|Montserrat+Subrayada|Passion+One|Poiret+One|Prata|Satisfy|Sorts+Mill+Goudy|Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Bebas+Neue|Cute+Font|Istok+Web|Josefin+Sans|Josefin+Slab|Julius+Sans+One|Karma|Markazi+Text|Monoton|Montserrat+Subrayada|Passion+One|Poiret+One|Prata|Satisfy|Sorts+Mill+Goudy|Staatliches&display=swap" rel="stylesheet">
 
 
 </head>
@@ -19,7 +19,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Direct To Employer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="applicationName">
+                    @Html.ActionLink("Direct To Employer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -32,9 +34,9 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @*<footer class="footer">
+            <p>&copy; @DateTime.Now.Year - Direct To Employer</p>
+        </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")

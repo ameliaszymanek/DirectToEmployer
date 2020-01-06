@@ -1,14 +1,90 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4>What To Bring Tips:</h4>
+    <div>
+        <h4>Tips to help you determine what to bring to your interview</h4>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+        <p>
+            Other than a positive attitude and preparation it is important to have the interview essentials with you in case of emergency. Below outlines a few suggested items to have with you for your interview day.
+        </p>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
+        <div>
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+<div class="col-md-4">
+    <h3>Must-Have Items</h3>
+    <h6>You should definitely have these items with you in every interview. Keep them in your briefcase/portfoilio/purse/exude them.</h6>
+    <p>
+        <h4>Resume Copies</h4>
+        Just incase!
+
+        <br /><br />
+        <h4>Pad of paper and pen</h4>
+        So you can take notes during your interview. Be curteous and ask if you can take notes at the beginning of your interview.
+
+        <br /><br />
+        <h4>Humility & Confidence</h4>
+        Be humble but confident in your strengths and the fact that you have this opportunity.
+
+        <br /><br />
+        <h4>Excitement</h4>
+        Show them your enthusiasm about being a software developer and what you can bring to their company.
+
+
+
+    </p>
+</div>
+
+<div class="col-md-4">
+    <h3>Possible Items</h3>
+    <h6>Use your resources to conduct thorough research for the company you are interviewing with. </h6>
+    <p>
+        <h4>Business Cards</h4>
+        You never know who you could add one out to.
+
+        <br /><br />
+        <h4>External Materials</h4>
+        Keep other materials at home unless you were told to bring something other than must-have items. Come as you are. You were invited to interview because you are who you are!
+    </p>
+</div>
+
+<div class="col-md-4">
+    <h3>Emergency Items</h3>
+    <h6>Keep these items in a little bag in your car or even in your briefcase or purse.</h6>
+    <p>
+        <h4>Tums</h4>
+        Didn't eat what you should have before the interview? Have no fear.
+
+        <br /><br />
+        <h4>Advil</h4>
+        Incase of a headache.
+
+        <br /><br />
+        <h4>Sewing Kit</h4>
+        Buttons pop off at the worst of times.
+
+        <br /><br />
+        <h4>Clear nail polish</h4>
+        Perfect tool to stop runs in nylons.
+
+        <br /><br />
+        <h4>Lint Roller</h4>
+        Necessity.
+
+        <br /><br />
+        <h4>Mint Gum</h4>
+        Fresh breath!
+
+    </p>
+
+
 </div>
 

@@ -1,4 +1,6 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     ViewBag.Title = "CompanyResearchTips";
@@ -6,34 +8,33 @@
 }
 
 <div>
-    <center>
-        <h4>Company Research Tips:</h4>
+    <div>
+        <h4>Tips to help you conduct company research</h4>
+        <p>
+            It is important to gain insight about the company you are interviewing with. Having knowledge of the company before going in for your interview will show your interest in working there. Doing some research can also help you prepare questions to ask during your interview and structure your answers for the questions you will be asked.
+        </p>
 
-        @Html.HiddenFor(model => model.InterviewId)
-        @Html.HiddenFor(model => model.ChecklistId)
-
-        <div class="col-md-3">
+        <div>
             <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
                 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
             </a>
         </div>
-        <div class="col-md-3">
-            <h2>Resources</h2>
-            <p>
-                helpful resource
-                helpful resource
-                helpful resource
-            </p>
-        </div>
-        <div class="col-md-3">
-            <h2>Research</h2>
-            <p>Use your resources to conduct thorough research for the company you are interviewing with. </p>
-        </div>
-        <div class="col-md-3">
-            <h2>Ready</h2>
-            <p>You're interiew ready! </p>
+    </div>
 
-        </div>
-    </center>
+    <div class="col-md-4">
+        <h2>Company Website</h2>
+        <p>
+            A simple review of the company's website can tell you about their mission, values, and what type of people they hire.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Inside Contact</h2>
+        <p>If you know someone who currently works in the company ask if you could speak with them about their experience.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Connecting on LinkedIn</h2>
+        <p>Networking is very important when it comes to getting a job. Connecting to people who work at the company on LinkedIn and asking them about their experience can also help.</p>
+    </div>
+
 </div>
 

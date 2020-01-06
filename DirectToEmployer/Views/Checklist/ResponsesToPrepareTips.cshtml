@@ -1,14 +1,78 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4>Responses To Prepare Tips:</h4>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
-</div>
+    <div>
+        <h4>Tips to help you prepare responses</h4>
+
+        <p>
+            Knowing your strengths and weaknesses helps an employer get to know you and determine how well your attitude and skills fit into their workplace. Being able to explain your strengths and weaknesses clearly will set you up for success. Being self-aware also enables you to answer situational and behavioral based questions. These questions are tools for an employer to get a sense of how you have behaved in the past and how you may behave in the future. Below you will find how to go about figuring out your strengths and weaknesses as well as behavioral and situational based question examples. Taking time to prepare responses with a pen a paper, on your computer, or even on your mobile phone will make your responses come across well. It will also put you at ease during the interview.<br />
+        </p>
+        
+        <div>
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Strengths/Weaknesses</h2>
+        <p>
+            <strong><h5>Resources At Your Fingertips</h5></strong>
+            Identify your strengths and weaknesses by making a t-chart on a piece of paper or a desktop application.<br /><br />
+            Ask your friends, collagues, family, or classmates what they thin your strengths and weaknesses are.<br /><br />
+            <a href="https://www.myersbriggs.org/my-mbti-personality-type/take-the-mbti-instrument/">Myers-Briggs Personality Assessment</a><br /><br />
+            <a href="https://high5test.com/">High 5 Test</a>
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Situation Based</h2>
+        <p>
+            <strong><h5>Question/Response Questions</h5></strong>
+            What do you know about object-oriented programming?<br /><br />
+            Tell me about a time you implemented one of the SOLID Principles into your programming.<br /><br />
+            What obstacles have you run into in software development?<br /><br />
+            What makes you excited about being a developer?<br /><br />
+            Pretend I am new to technology. Can you explain what ____ is in layman’s terms.<br /><br />
+            Do you consider unit testing to be essential?<br /><br />
+            Have you had any experience in an agile software development process?<br /><br />
+            Explain big-O notation in the simplest terms.<br /><br />
+            What development tools have you used?<br /><br />
+
+
+            <strong><h5>Technical Questions</h5></strong>
+            Can you find the error in this code?<br /><br />
+            Solve this technical problem.<br />
+
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Behavior Based</h2>
+        <p>
+            <strong><h5>Self-Motivation </h5></strong>Give me an example of a project you started on your own, work or non-business. What motivated you to start it? <br />
+            <strong><h5>Adaptability </h5></strong>Tell me about a situation when you met a major obstacle. How did you deal with it? <br />
+            <strong><h5>Communication </h5></strong>Describe a time when you felt you did not communicate well enough. How did you handle the miscommunication? <br />
+            Tell me about a time you had to respond to negative feedback.
+            <strong><h5>Conflict </h5></strong>Think about a time when you had to work through conflict within your team. Was the conflict solved? If so, how did you handle that? If it happened again, how would you deal with it? <br />
+            What do you do when an application stops running?<br />
+            <strong><h5>Creativity </h5></strong>Tell me about a time you took an unusual approach to solving a coding problem. How did you come up with this idea? Why do you think it was unusual? <br />
+            <strong><h5>Decision Making </h5></strong>Have you had to make a decision at work that was unpopular? How did you handle it?<br />
+            <strong><h5>Goal Orientation </h5></strong>Describe a circumstance when you were not able to fulfill a set project goal set by your supervisor. What was the outcome?<br />
+            <strong><h5>Influence </h5></strong>Who is your rolemodel in tech?<br />
+            Have you ever been in the position to "sell" an idea to your team? How did you do it and did it go over well?<br />
+            <strong><h5>Time Management </h5></strong>How do you go about planning and priority setting when you start a new project?<br />
+            <strong><h5>Problem Solving </h5></strong>Describe a situation at work when you made a mistake. What happened and how did you deal with it?<br />
+            <strong><h5>Teamwork </h5></strong>Tell me about a team experience that did not go over well. What would you have done to prevent this?<br />
+        </p>
+
+    </div>
+
 

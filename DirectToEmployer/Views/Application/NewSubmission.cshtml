@@ -1,12 +1,16 @@
 ﻿@model DirectToEmployer.Models.Application
 
+@{ 
+        Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
+}
+
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.JobPostingId)
     
     <div class="form-horizontal">
-        <h2>Application:</h2>
+        <h2>Application</h2>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -46,6 +50,11 @@
                 <input type="submit" value="Submit" class="btn btn-default" />
             </div>
         </div>
+        <br /><br />
+
+        <a href="@Url.Action("OpenJobPostings", "Jobposting")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+        </a>
     </div>
 }
 

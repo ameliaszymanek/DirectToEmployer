@@ -1,4 +1,6 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 @{
     ViewBag.Title = "InterviewChecklist";
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
@@ -7,9 +9,6 @@
     <h2>Interview Checklist</h2>
     <hr />
     <dl class="dl-horizontal">
-        @Html.HiddenFor(model => model.InterviewId)
-        @Html.HiddenFor(model => model.ChecklistId)
-
         <dt>
             @Html.DisplayFor(model => model.CompanyResearch)
 
@@ -18,32 +17,8 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.CompanyResearch)
-        </dd>
-
-        <dt>
-            @Html.DisplayFor(model => model.QuestionsToPrepare)
-
-            <a href="@Url.Action("QuestionsToPrepareTips", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
-                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-            </a>
-        </dt>
-
-        <dd>
-            @Html.DisplayNameFor(model => model.QuestionsToPrepare)
-        </dd>
-
-        <dt>
-            @Html.DisplayFor(model => model.PracticeQuestions)
-
-            <a href="@Url.Action("PracticeQuestionsTips", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
-                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-            </a>
-        </dt>
-
-        <dd>
-            @Html.DisplayNameFor(model => model.PracticeQuestions)
         </dd>
 
         <dt>
@@ -54,7 +29,7 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.ResponsesToPrepare)
         </dd>
 
@@ -67,8 +42,32 @@
 
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.PracticeResponses)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.QuestionsToPrepare)
+
+            <a href="@Url.Action("QuestionsToPrepareTips", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
+        </dt>
+
+        <dd class="checklistTasks">
+            @Html.DisplayNameFor(model => model.QuestionsToPrepare)
+        </dd>
+
+        <dt>
+            @Html.DisplayFor(model => model.PracticeQuestions)
+
+            <a href="@Url.Action("PracticeQuestionsTips", "Checklist", new { id = Model.ChecklistId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            </a>
+        </dt>
+
+        <dd class="checklistTasks">
+            @Html.DisplayNameFor(model => model.PracticeQuestions)
         </dd>
 
         <dt>
@@ -79,7 +78,7 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.WhatToWear)
         </dd>
 
@@ -91,7 +90,7 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.PrepareOutfit)
         </dd>
 
@@ -103,7 +102,7 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.WhatToBring)
         </dd>
 
@@ -115,7 +114,7 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.PrepareInterviewEssentials)
         </dd>
 
@@ -127,7 +126,7 @@
             </a>
         </dt>
 
-        <dd>
+        <dd class="checklistTasks">
             @Html.DisplayNameFor(model => model.InterviewFollowUp)
         </dd>
     </dl>

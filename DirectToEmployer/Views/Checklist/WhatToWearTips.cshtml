@@ -1,14 +1,212 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4>What To Wear Tips:</h4>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+    <div>
+        <div>
+            <h4>Tips to help you figure out what to wear</h4>
+            <p>
+                As a rule of thumb your appearance should tailored and clean. It is important to know the company you are interviewing with and if there is an expectation to be more formal rather than casual.
+            </p>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
-</div>
+            <div>
+                <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+                </a>
+            </div>
+
+        </div>
+        
+        <br />
+
+        <div>
+            <div class="col-md-12">
+                <h3>Ladies</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Clothing</h4>
+                <p>
+
+                    <h5>COLORS</h5>
+                    <h6>SUIT JACKET</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: navy; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #3D4040; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #301706; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #330404; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: black; font-size: 50px;" aria-hidden="true"></span>
+                    </a><br /><br />
+
+                    <h6>SLACKS</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: navy; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #3D4040; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #301706; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #330404; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: black; font-size: 50px;" aria-hidden="true"></span>
+                    </a><br /><br />
+
+                    <h6>BLOUSE</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: antiquewhite; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #D5D6D2; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #CCA3BC; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #A3B6CC; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #C3A3CC; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <br /><br />
+                    <h6>SHOES</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: navy; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #3D4040; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #301706; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #330404; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: black; font-size: 50px;" aria-hidden="true"></span>
+                    </a><br /><br />
+
+                    <h5>OUTFIT IDEAS</h5>
+                    suit jacket, blouse, slacks<br /><br />
+                    suit jacket, blouse, skirt, nylons<br /><br />
+                    suit jacket, dress, nylons<br /><br />
+                    dress, nylons
+                    <br /><br />
+
+                    <h5>ACCESSORIES</h5>
+                    clean glasses<br /><br />
+                    carry a purse or briefcase<br /><br />
+
+                    <h5>JEWLEREY</h5>
+                    simple jewlerey such as a necklace, earrings, and wristwatch
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h4>Hairstyle</h4>
+                <p>
+                    <h5>STYLE</h5>clean and professional<br />
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h4>Grooming Habbits</h4>
+                <p>
+                    <h5>MAKEUP</h5>simple and not too heavy<br /><br />
+                    <h5>NAILS</h5>manicured with clear or tasteful colored polish<br /><br />
+                    <h5>MISC</h5>avoid strong smelling deodarant and perfume<br />
+                </p>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div>
+            <div class="col-md-12">
+                <h3>Gentlemen</h3>
+            </div>
+            <div class="col-md-4">
+                <h4>Clothing</h4>
+                <p>
+                    <h5>COLORS</h5>
+                    <h6>SUIT</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #3D4040; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: black; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <br />
+                    <br />
+                    <h6>COLLARD SHIRT</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: antiquewhite; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #D5D6D2; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #C8F7F3; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #CEE4F2; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #DACCED; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <br />
+                    <br />
+                    <h6>SHOES</h6>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #3B1C0B; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #CF7D2B; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: #330404; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <a>
+                        <span class="glyphicon glyphicon-ok-sign" style="color: black; font-size: 50px;" aria-hidden="true"></span>
+                    </a>
+                    <br />
+                    <br />
+
+                    @* colors to avoid RED *@
+                    <h5>OUTFIT</h5>suit, tie/no tie, dress shoes<br />
+                    <h5>ACCESSORIES</h5>clean glasses, wristwatch, carry a leather-like portfoilio or briefcasee<br />
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h4>Hairstyle</h4>
+                <p>
+                    <h5>STYLE</h5>clean cut and professional<br />
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h4>Grooming Habbits</h4>
+                <p>
+                    <h5>NAILS</h5>manicured and clean<br /><br />
+                    <h5>MISC</h5>avoid strong smelling deodarant and perfume<br />
+                </p>
+            </div>
+        </div>
+    </div>
 

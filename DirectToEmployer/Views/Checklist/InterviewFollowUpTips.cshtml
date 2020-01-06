@@ -1,15 +1,21 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
-@{ 
+@{
     ViewBag.Title = "InterviewFollowUpTips";
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4>Interview Follow Up Tips:</h4>
+    <div>
+        <h4>Tips for following up after your interview</h4>
+        <p>
+            A simple thank you in the form of an email to the HR rep to thank the company for their time and for the opportunity can go a long way. 
+        </p>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
-
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
-</div>
+        <div>
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
 

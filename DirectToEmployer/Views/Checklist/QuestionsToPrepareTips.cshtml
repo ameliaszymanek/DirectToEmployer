@@ -1,13 +1,48 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
-<div>
-    <h4> Questions To Prepare Tips:</h4>
+    <div>
+        <h4>Tips to help you prepare questions</h4>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+        <p>
+            Now that you have done some research on the company you will be interviewing with it is time to prepare questions to ask during the interview. Having these questions prepared will show your genuine interest in working there. This is also a chance for you to figure out if this company is a fit for you, your skills, needs, values, and goals.
+        </p>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
-</div>
+        <div>
+            <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Questions To Ask Regarding How You Would Fit In</h2>
+        <p>
+            If I get this position, what will be the most important part of my job, in terms of ensuring you and the team I will be joining are successful?<br /><br />
+            What would be the most valuable new skills for me to develop to succeed in this position?<br /><br />
+            Where will I fit into the overall organizational structure?<br />
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Questions To Ask About The Company's Environment</h2>
+        <p>
+            How would you describe the work environment?<br /><br />
+            Do your employees work individually or as a team?<br /><br />
+            What further education or training does the company consider for my future progress?<br />
+
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Questions To Ask About The Day To Day</h2>
+        <p>
+            How would you describe a typical day on the job?<br /><br />
+            Who is the supervisor for the position?<br /><br />
+            What do you expect me to accomplish in the first six months?<br />
+        </p>
+
+    </div>

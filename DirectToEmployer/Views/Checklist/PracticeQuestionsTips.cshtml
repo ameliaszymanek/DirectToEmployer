@@ -1,14 +1,47 @@
 ﻿@model DirectToEmployer.Models.Checklist
+@Html.HiddenFor(model => model.InterviewId)
+@Html.HiddenFor(model => model.ChecklistId)
 
 @{
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
 <div>
-    <h4>Practice Questions Tips:</h4>
+    <h4>Tips to help you practice asking questions</h4>
 
-    @Html.HiddenFor(model => model.InterviewId)
-    @Html.HiddenFor(model => model.ChecklistId)
+    <p>
+        Like preparing responses to questions to make what you say second nature, you should practice asking the questions you would like to ask to the interviewer(s).
+    </p>
 
-    <p>@Html.ActionLink("Back to checklist", "InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)</p>
+    <div>
+        <a href="@Url.Action("InterviewChecklist", "Interview", new { id = Model.InterviewId }, null)" class="btn btn-warning">
+            <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+        </a>
+    </div>
 </div>
+
+<div class="col-md-4">
+    <h2>How do I practice asking questions?</h2>
+    <p>
+        Practice in front of a mirror. It may seem awkward but the way you present yourself while interviewing is very important.<br /><br />
+        Record your voice or a video of yourself asking questions.<br /><br />
+        Ask a friend or family member if you can practice asking them questions.
+    </p>
+</div>
+
+<div class="col-md-4">
+    <h2>What to remember when practicing</h2>
+    <p>
+        Clear and concise<br /><br />
+        Use your knowledge of the company to construct your questions<br /><br />
+        Remember to maintain eye contact<br />
+    </p>
+</div>
+
+<div class="col-md-4">
+    <h2>Review your questions</h2>
+    <p>
+        Review your recordings or ask for feedback from a friend or family member after practicing.<br />
+    </p>
+</div>
+
 
