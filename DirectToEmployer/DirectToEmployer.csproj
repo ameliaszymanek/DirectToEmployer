@@ -182,29 +182,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912311426415_NinthMigration.cs" />
-    <Compile Include="Migrations\201912311426415_NinthMigration.Designer.cs">
-      <DependentUpon>201912311426415_NinthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912311509129_TenthMigration.cs" />
-    <Compile Include="Migrations\201912311509129_TenthMigration.Designer.cs">
-      <DependentUpon>201912311509129_TenthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912311657276_EleventhMigration.cs" />
-    <Compile Include="Migrations\201912311657276_EleventhMigration.Designer.cs">
-      <DependentUpon>201912311657276_EleventhMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001011725359_TwelfthMigration.cs" />
-    <Compile Include="Migrations\202001011725359_TwelfthMigration.Designer.cs">
-      <DependentUpon>202001011725359_TwelfthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001021602127_ThirteenthMigration.cs" />
-    <Compile Include="Migrations\202001021602127_ThirteenthMigration.Designer.cs">
-      <DependentUpon>202001021602127_ThirteenthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001022000558_FourteenthMigration.cs" />
-    <Compile Include="Migrations\202001022000558_FourteenthMigration.Designer.cs">
-      <DependentUpon>202001022000558_FourteenthMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202001071923043_FifteenthMigration.cs" />
+    <Compile Include="Migrations\202001071923043_FifteenthMigration.Designer.cs">
+      <DependentUpon>202001071923043_FifteenthMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -344,23 +324,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912311426415_NinthMigration.resx">
-      <DependentUpon>201912311426415_NinthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912311509129_TenthMigration.resx">
-      <DependentUpon>201912311509129_TenthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912311657276_EleventhMigration.resx">
-      <DependentUpon>201912311657276_EleventhMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001011725359_TwelfthMigration.resx">
-      <DependentUpon>202001011725359_TwelfthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001021602127_ThirteenthMigration.resx">
-      <DependentUpon>202001021602127_ThirteenthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001022000558_FourteenthMigration.resx">
-      <DependentUpon>202001022000558_FourteenthMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001071923043_FifteenthMigration.resx">
+      <DependentUpon>202001071923043_FifteenthMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

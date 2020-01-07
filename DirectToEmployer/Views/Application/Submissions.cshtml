@@ -2,44 +2,43 @@
 
 @{
     ViewBag.Title = "Submissions";
+    Layout = "~/Views/Shared/_LayoutEmployer.cshtml";
 }
 
-<h2>Submissions:</h2>
+<h2>Submissions</h2>
 
 <table>
     <tr>
-        <th>
+        <th class="col-md-2">
             Applicant Name
         </th>
-        <th>
+        <th class="col-md-2">
             Applicant Email Address
         </th>
-        <th>
+        <th class="col-md-4">
             Challenge Solution
         </th>
-        <th>
+        <th class="col-md-2">
             Applicant Portfolio Link
         </th>
-        <th></th>
+        <th class="col-md-2"></th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td class="col-md-2">
                 @Html.DisplayFor(modelItem => item.ApplicantName)
             </td>
-            <td>
+            <td class="col-md-2">
                 @Html.DisplayFor(modelItem => item.ApplicantEmailAddress)
             </td>
-            <td>
+            <td class="col-md-4">
                 @Html.DisplayFor(modelItem => item.ChallengeSolution)
             </td>
-            <td>
+            <td class="col-md-2">
                 @Html.DisplayFor(modelItem => item.ApplicantPortfolioLink)
             </td>
-            <td>
-                @*@Html.ActionLink(" Send New", "Send", "Gmail", "Send", new { @class = "btn btn-default btn-sm glyphicon glyphicon-envelope"})*@
-                
+            <td class="col-md-2">                
                 <a href="@Url.Action("Send", "Gmail")" class="btn btn-warning">
                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
                 </a>

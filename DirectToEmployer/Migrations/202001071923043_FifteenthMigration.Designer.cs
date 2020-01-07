@@ -7,13 +7,13 @@ namespace DirectToEmployer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class EleventhMigration : IMigrationMetadata
+    public sealed partial class FifteenthMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EleventhMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FifteenthMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912311657276_EleventhMigration"; }
+            get { return "202001071923043_FifteenthMigration"; }
         }
         
         string IMigrationMetadata.Source

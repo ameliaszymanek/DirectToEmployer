@@ -28,6 +28,8 @@ textarea {
     background: #153F4C;
     font: white;
     font-family: 'Staatliches', cursive;
+    box-shadow: 0 8px 6px -6px #999;
+    ;
 }
 
 .applicationName {
@@ -105,9 +107,7 @@ a {
     color: white;
 }
 
-/*#morningCoffee{
-    width: 33%;
-}*/
+
 
 
 

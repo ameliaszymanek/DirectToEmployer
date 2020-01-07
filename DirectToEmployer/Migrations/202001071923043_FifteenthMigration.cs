@@ -3,7 +3,7 @@ namespace DirectToEmployer.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NinthMigration : DbMigration
+    public partial class FifteenthMigration : DbMigration
     {
         public override void Up()
         {
@@ -15,60 +15,43 @@ namespace DirectToEmployer.Migrations
                         ApplicantName = c.String(),
                         ApplicantEmailAddress = c.String(),
                         ChallengeSolution = c.String(),
+                        ApplicantPortfolioLink = c.String(),
+                        JobPostingId = c.Guid(nullable: false),
                     })
-                .PrimaryKey(t => t.ApplicationId);
+                .PrimaryKey(t => t.ApplicationId)
+                .ForeignKey("dbo.JobPostings", t => t.JobPostingId, cascadeDelete: true)
+                .Index(t => t.JobPostingId);
             
             CreateTable(
-                "dbo.Checklists",
+                "dbo.JobPostings",
                 c => new
                     {
-                        ChecklistId = c.Guid(nullable: false),
-                        CompanyResearch = c.Boolean(nullable: false),
-                        QuestionsToPrepare = c.Boolean(nullable: false),
-                        PracticeQuestions = c.Boolean(nullable: false),
-                        ResponsesToPrepare = c.Boolean(nullable: false),
-                        PracticeResponses = c.Boolean(nullable: false),
-                        WhatToWear = c.Boolean(nullable: false),
-                        PrepareOutfit = c.Boolean(nullable: false),
-                        WhatToBring = c.Boolean(nullable: false),
-                        PrepareInterviewEssentials = c.Boolean(nullable: false),
-                        InterviewFollowUp = c.Boolean(nullable: false),
-                        InterviewId = c.Guid(nullable: false),
-                    })
-                .PrimaryKey(t => t.ChecklistId)
-                .ForeignKey("dbo.Interviews", t => t.InterviewId, cascadeDelete: true)
-                .Index(t => t.InterviewId);
-            
-            CreateTable(
-                "dbo.Interviews",
-                c => new
-                    {
-                        InterviewId = c.Guid(nullable: false),
+                        JobPostingId = c.Guid(nullable: false),
+                        JobTitle = c.String(),
                         CompanyName = c.String(),
-                        CompanyAddress = c.String(),
-                        DateAndTimeOfInterview = c.DateTime(nullable: false),
-                        DistanceToInterview = c.String(),
-                        DurationToInterview = c.String(),
-                        JobseekerId = c.Guid(nullable: false),
+                        Suspense = c.DateTime(nullable: false),
+                        DesiredSkills = c.String(),
+                        JobPostingSummary = c.String(),
+                        ApplicationChallenge = c.String(),
+                        EmployerId = c.Guid(nullable: false),
                     })
-                .PrimaryKey(t => t.InterviewId)
-                .ForeignKey("dbo.Jobseekers", t => t.JobseekerId, cascadeDelete: true)
-                .Index(t => t.JobseekerId);
+                .PrimaryKey(t => t.JobPostingId)
+                .ForeignKey("dbo.Employers", t => t.EmployerId, cascadeDelete: true)
+                .Index(t => t.EmployerId);
             
             CreateTable(
-                "dbo.Jobseekers",
+                "dbo.Employers",
                 c => new
                     {
-                        JobseekerId = c.Guid(nullable: false),
+                        EmployerId = c.Guid(nullable: false),
                         FirstName = c.String(),
                         LastName = c.String(),
                         EmailAddress = c.String(),
-                        HomeAddress = c.String(),
                         Industry = c.String(),
-                        TopThreeSkills = c.String(),
+                        CompanyName = c.String(),
                         ApplicationId = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.JobseekerId)
+                .PrimaryKey(t => t.EmployerId)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationId)
                 .Index(t => t.ApplicationId);
             
@@ -131,34 +114,58 @@ namespace DirectToEmployer.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.Employers",
+                "dbo.Checklists",
                 c => new
                     {
-                        EmployerId = c.Guid(nullable: false),
+                        ChecklistId = c.Guid(nullable: false),
+                        CompanyResearch = c.Boolean(nullable: false),
+                        QuestionsToPrepare = c.Boolean(nullable: false),
+                        PracticeQuestions = c.Boolean(nullable: false),
+                        ResponsesToPrepare = c.Boolean(nullable: false),
+                        PracticeResponses = c.Boolean(nullable: false),
+                        WhatToWear = c.Boolean(nullable: false),
+                        PrepareOutfit = c.Boolean(nullable: false),
+                        WhatToBring = c.Boolean(nullable: false),
+                        PrepareInterviewEssentials = c.Boolean(nullable: false),
+                        InterviewFollowUp = c.Boolean(nullable: false),
+                        InterviewId = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.ChecklistId)
+                .ForeignKey("dbo.Interviews", t => t.InterviewId, cascadeDelete: true)
+                .Index(t => t.InterviewId);
+            
+            CreateTable(
+                "dbo.Interviews",
+                c => new
+                    {
+                        InterviewId = c.Guid(nullable: false),
+                        CompanyName = c.String(),
+                        CompanyAddress = c.String(),
+                        DateAndTimeOfInterview = c.DateTime(nullable: false),
+                        DistanceToInterview = c.String(),
+                        DurationToInterview = c.String(),
+                        JobseekerId = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.InterviewId)
+                .ForeignKey("dbo.Jobseekers", t => t.JobseekerId, cascadeDelete: true)
+                .Index(t => t.JobseekerId);
+            
+            CreateTable(
+                "dbo.Jobseekers",
+                c => new
+                    {
+                        JobseekerId = c.Guid(nullable: false),
                         FirstName = c.String(),
                         LastName = c.String(),
                         EmailAddress = c.String(),
+                        HomeAddress = c.String(),
                         Industry = c.String(),
-                        CompanyName = c.String(),
+                        TopThreeSkills = c.String(),
                         ApplicationId = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.EmployerId)
+                .PrimaryKey(t => t.JobseekerId)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationId)
                 .Index(t => t.ApplicationId);
-            
-            CreateTable(
-                "dbo.JobPostings",
-                c => new
-                    {
-                        JobPostingId = c.Guid(nullable: false),
-                        DesiredSkills = c.String(),
-                        JobPostingSummary = c.String(),
-                        ApplicationChallenge = c.String(),
-                        EmployerId = c.Guid(nullable: false),
-                    })
-                .PrimaryKey(t => t.JobPostingId)
-                .ForeignKey("dbo.Employers", t => t.EmployerId, cascadeDelete: true)
-                .Index(t => t.EmployerId);
             
             CreateTable(
                 "dbo.JobseekerApplications",
@@ -191,38 +198,40 @@ namespace DirectToEmployer.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.JobseekerApplications", "JobseekerId", "dbo.Jobseekers");
             DropForeignKey("dbo.JobseekerApplications", "ApplicationId", "dbo.Applications");
-            DropForeignKey("dbo.JobPostings", "EmployerId", "dbo.Employers");
-            DropForeignKey("dbo.Employers", "ApplicationId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Checklists", "InterviewId", "dbo.Interviews");
             DropForeignKey("dbo.Interviews", "JobseekerId", "dbo.Jobseekers");
             DropForeignKey("dbo.Jobseekers", "ApplicationId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Applications", "JobPostingId", "dbo.JobPostings");
+            DropForeignKey("dbo.JobPostings", "EmployerId", "dbo.Employers");
+            DropForeignKey("dbo.Employers", "ApplicationId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.JobseekerApplications", new[] { "ApplicationId" });
             DropIndex("dbo.JobseekerApplications", new[] { "JobseekerId" });
-            DropIndex("dbo.JobPostings", new[] { "EmployerId" });
-            DropIndex("dbo.Employers", new[] { "ApplicationId" });
+            DropIndex("dbo.Jobseekers", new[] { "ApplicationId" });
+            DropIndex("dbo.Interviews", new[] { "JobseekerId" });
+            DropIndex("dbo.Checklists", new[] { "InterviewId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Jobseekers", new[] { "ApplicationId" });
-            DropIndex("dbo.Interviews", new[] { "JobseekerId" });
-            DropIndex("dbo.Checklists", new[] { "InterviewId" });
+            DropIndex("dbo.Employers", new[] { "ApplicationId" });
+            DropIndex("dbo.JobPostings", new[] { "EmployerId" });
+            DropIndex("dbo.Applications", new[] { "JobPostingId" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.JobseekerApplications");
-            DropTable("dbo.JobPostings");
-            DropTable("dbo.Employers");
+            DropTable("dbo.Jobseekers");
+            DropTable("dbo.Interviews");
+            DropTable("dbo.Checklists");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.Jobseekers");
-            DropTable("dbo.Interviews");
-            DropTable("dbo.Checklists");
+            DropTable("dbo.Employers");
+            DropTable("dbo.JobPostings");
             DropTable("dbo.Applications");
         }
     }

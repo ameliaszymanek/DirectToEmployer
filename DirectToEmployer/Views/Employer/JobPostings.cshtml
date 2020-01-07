@@ -5,50 +5,52 @@
     Layout = "~/Views/Shared/_LayoutEmployer.cshtml";
 }
 
-<h2>Your Active Job Postings:</h2>
+<h2>My Active Job Postings</h2>
 
 <p>
-    @Html.ActionLink("Create a new job posting", "Create", "JobPosting")
+    <a href="@Url.Action("Create", "JobPosting")" class="btn btn-warning">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+    </a>
 </p>
 
 <table>
     <tr>
-        <th>
+        <th class="col-md-4">
             Job Title
         </th>
-        <th>
+        <th class="col-md-4">
             Suspense
         </th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th class="col-md-1"></th>
+        <th class="col-md-1"></th>
+        <th class="col-md-1"></th>
+        <th class="col-md-1"></th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td class="col-md-4">
                 @Html.DisplayFor(modelItem => item.JobTitle)
             </td>
-            <td>
+            <td class="col-md-4">
                 @Html.DisplayFor(modelItem => item.Suspense)
             </td>
-            <td>
+            <td class="col-md-1">
                 <a href="@Url.Action("Edit", "JobPosting", new { id = item.JobPostingId }, null)" class="btn btn-warning">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                 </a>
             </td>
-            <td>
+            <td class="col-md-1">
                 <a href="@Url.Action("JobPosting", "JobPosting", new { id = item.JobPostingId }, null)" class="btn btn-warning">
                     <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
                 </a>
             </td>
-            <td>
+            <td class="col-md-1">
                 <a href="@Url.Action("Submissions", "Application", new { id = item.JobPostingId }, null)" class="btn btn-warning">
                     <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
                 </a>
             </td>
-            <td>
+            <td class="col-md-1">
                 <a href="@Url.Action("Delete", "JobPosting", new { id = item.JobPostingId }, null)" class="btn btn-warning">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </a>
