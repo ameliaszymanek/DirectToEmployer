@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 30px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -44,7 +45,10 @@ footer {
 }
 
 .jumbotron {
-     
+    background-image: url('../Images/khai-truong-MD6HeNtFaFw-unsplash.jpg');
+    font-family: 'Staatliches', cursive;
+    color: white;
+    margin-top: 5%;
 }
 
 .btn-warning {
@@ -57,6 +61,14 @@ footer {
     color: black;
     font-family: 'Staatliches', cursive;
 }
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    background-color: #C8E2E2;
+    color: white;
+    padding: 15px;
+}
+
 h2 {
     font-family: 'Staatliches', cursive;
 }
@@ -64,18 +76,21 @@ h3 {
     font-family: 'Staatliches', cursive;
     background-color: #153F4C; 
     color: white;
+    padding: 5px;
 }
 
 h4 {
     font-family: 'Staatliches', cursive;
     background-color: #1F5869;
     color: white;
+    padding: 5px;
 }
 
 h5 {
     font-family: 'Staatliches', cursive;
     background-color: #C8E2E2;
     color: white;
+    padding: 5px;
 }
 
 h6 {
@@ -86,14 +101,15 @@ body {
     font-family: 'Karma', serif;
 }
 
-/*.pageContainer{
-    position: relative;
-    min-height: 100vh;
+a {
+    color: white;
 }
 
-.contentWrap{
-    padding-bottom: 2.5rem;
+/*#morningCoffee{
+    width: 33%;
 }*/
+
+
 
 
 

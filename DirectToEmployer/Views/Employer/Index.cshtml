@@ -4,5 +4,43 @@
     Layout = "~/Views/Shared/_LayoutEmployer.cshtml";
 }
 
-<h2>Index</h2>
+<div>
+    <h1>Make finding your company's next new employee part of your day</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <h4>Over your morning coffee</h4>
+
+            <container id="morningCoffee"><img src="~/Images/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-unsplash.jpg" width="360" /><br /></container>
+
+            <a href="@Url.Action("Create", "JobPosting")" class="btn btn-warning">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <h4>On your lunch break</h4>
+
+        <container id="morningCoffee"><img src="~/Images/debby-hudson-pomybSOZsts-unsplash.jpg" width="360" /><br /></container>
+
+        <a href="@Url.Action("Create", "JobPosting")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h4>During a commercial</h4>
+
+        <container id="morningCoffee"><img src="~/Images/ajeet-mestry-UBhpOIHnazM-unsplash.jpg" width="360" /><br /></container>
+
+        <a href="@Url.Action("Create", "JobPosting")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
+
 

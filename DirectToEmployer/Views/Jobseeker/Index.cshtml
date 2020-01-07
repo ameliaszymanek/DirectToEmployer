@@ -6,9 +6,55 @@
     Layout = "~/Views/Shared/_LayoutJobseeker.cshtml";
 }
 
-<h2>Index</h2>
 
-@* add new interview *@
+<div>
+    <h1>Make preparing for your next interview or discovering open positions that compliment your skill set part of your day</h1>
+</div>
 
-@Html.ActionLink("Prepare for a new interview", "Create", "Interview")
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <h4>Over your morning coffee</h4>
+
+            <container id="morningCoffee"><img src="~/Images/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-unsplash.jpg" width="360" /><br /></container>
+
+            <a href="@Url.Action("Create", "Interview")" class="btn btn-warning">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </a>
+
+            <a href="@Url.Action("OpenJobPostings", "JobPosting")" class="btn btn-warning">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <h4>On your lunch break</h4>
+
+        <container id="morningCoffee"><img src="~/Images/debby-hudson-pomybSOZsts-unsplash.jpg" width="360" /><br /></container>
+
+        <a href="@Url.Action("Create", "Interview")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </a>
+
+        <a href="@Url.Action("OpenJobPostings", "JobPosting")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h4>During a commercial</h4>
+
+        <container id="morningCoffee"><img src="~/Images/ajeet-mestry-UBhpOIHnazM-unsplash.jpg" width="360" /><br /></container>
+
+        <a href="@Url.Action("Create", "Interview")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </a>
+
+        <a href="@Url.Action("OpenJobPostings", "JobPosting")" class="btn btn-warning">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
 

@@ -230,6 +230,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\ajeet-mestry-UBhpOIHnazM-unsplash.jpg" />
+    <Content Include="Images\Camping_Mug.jpg" />
+    <Content Include="Images\clemens-van-lay-un1s8VOLRC0-unsplash.jpg" />
+    <Content Include="Images\debby-hudson-pomybSOZsts-unsplash.jpg" />
+    <Content Include="Images\hope-house-press-leather-diary-studio-PJzc7LOt2Ig-unsplash.jpg" />
+    <Content Include="Images\khai-truong-MD6HeNtFaFw-unsplash.jpg" />
+    <Content Include="Images\left-chair.jpg" />
+    <Content Include="Images\steve-halama-NPKk_3ZK2DY-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
