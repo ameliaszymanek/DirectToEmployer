@@ -33,11 +33,26 @@ namespace DirectToEmployer.Controllers
         public ActionResult ViewInterviews()
         {
             var userId = User.Identity.GetUserId();
+            DateTime currentDay = DateTime.Now;
             //first find jobseeker logged in
             Jobseeker jobseeker = db.Jobseekers.FirstOrDefault(j => j.ApplicationId == userId);
             //then find all itineraries that jobseeker has (jobseeker id)
-            return View(db.Interviews.Where(i => i.JobseekerId == jobseeker.JobseekerId).ToList());
+            //db.Interviews.Where(i => i.JobseekerId == jobseeker.JobseekerId).ToList();
+            List<Interview> jobseekerInterviews = db.Interviews.Where(i => i.JobseekerId == jobseeker.JobseekerId).ToList();
+            List <Interview> descendingOrder = jobseekerInterviews.Where(i => i.DateAndTimeOfInterview > currentDay).OrderByDescending(i => i.DateAndTimeOfInterview).ToList();
+            List<Interview> ascendingOrder = new List<Interview>();
+            for (int i = descendingOrder.Count-1; i >= 0; i--)
+            {
+                //add current i to list
+                ascendingOrder.Add(descendingOrder[i]);
+            }
+
+            return View(ascendingOrder);
         }
+        //return View(_db.ArticleSet.Where(a => a.showFrom<DateTime.Now
+        //    && a.showUntil> DateTime.Now
+        //    && a.newsArticle).OrderByDescending(a => a.showFrom).ToList());
+
 
         // GET: Jobseeker/Details/5
         public ActionResult Details(int id)
