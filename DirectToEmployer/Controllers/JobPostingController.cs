@@ -33,7 +33,18 @@ namespace DirectToEmployer.Controllers
         //get all open job postings
         public ActionResult OpenJobPostings()
         {
-            return View(db.JobPostings.ToList());
+            DateTime currentDay = DateTime.Now;
+            List<JobPosting> openJobPostings = db.JobPostings.ToList();
+            List<JobPosting> descendingOrder = openJobPostings.Where(i => i.Suspense > currentDay).OrderByDescending(i => i.Suspense).ToList();
+            List<JobPosting> ascendingOrder = new List<JobPosting>();
+            for (int i = descendingOrder.Count - 1; i >= 0; i--)
+            {
+                //add current i to list
+                ascendingOrder.Add(descendingOrder[i]);
+            }
+
+            return View(ascendingOrder);
+            //return View(db.JobPostings.ToList());
         }
 
 
