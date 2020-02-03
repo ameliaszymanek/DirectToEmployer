@@ -59,8 +59,19 @@ namespace DirectToEmployer.Controllers
         public ActionResult JobPostings()
         {
             var userId = User.Identity.GetUserId();
+            DateTime currentDay = DateTime.Now;
             Employer employer = db.Employers.FirstOrDefault(e => e.ApplicationId == userId);
-            return View(db.JobPostings.Where(i => i.EmployerId == employer.EmployerId).ToList());
+
+            List<JobPosting> employerJobPostings = db.JobPostings.Where(i => i.EmployerId == employer.EmployerId).ToList();
+            List<JobPosting> descendingOrder = employerJobPostings.Where(i => i.Suspense > currentDay).OrderByDescending(i => i.Suspense).ToList();
+            List<JobPosting> ascendingOrder = new List<JobPosting>();
+            for (int i = descendingOrder.Count - 1; i >= 0; i--)
+            {
+                //add current i to list
+                ascendingOrder.Add(descendingOrder[i]);
+            }
+
+            return View(ascendingOrder);
         }
 
         public ActionResult ApplicationHome()
