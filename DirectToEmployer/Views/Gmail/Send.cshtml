@@ -1,9 +1,13 @@
-﻿@model DirectToEmployer.Models.Gmail
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmployer.cshtml";
+}
 
-@using (Html.BeginForm()) 
+@model DirectToEmployer.Models.Gmail
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Gmail</h4>
         <hr />
